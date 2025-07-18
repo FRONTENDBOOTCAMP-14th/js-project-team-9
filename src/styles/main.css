@@ -1,0 +1,11 @@
+@layer base, theme;
+
+@import "./common/_normalize.css" layer(base);
+@import "./common/_base.css" layer(base);
+
+@import "./common/_theme.css" layer(theme);
+@import "./_theme.css" layer(theme);
+
+[hidden] {
+  display: none !important;
+}
