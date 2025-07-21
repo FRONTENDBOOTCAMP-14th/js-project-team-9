@@ -3,6 +3,8 @@
 @import "./common/_normalize.css" layer(base);
 @import "./common/_base.css" layer(base);
 
+@import "./common/_animation.css";
+
 @import "./common/_theme.css" layer(theme);
 @import "./_theme.css" layer(theme);
 
