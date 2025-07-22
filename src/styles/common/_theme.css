@@ -134,11 +134,64 @@
   --pink-900: hsl(350, 45%, 10%);
   --pink-950: hsl(350, 45%, 5%);
 
+  /* index 페이지 색상 */
   --main-red: #e60012;
   --bg-gray: #e9e9e9;
   --select-font-color: #215fe5;
   --select-green: #14cb0c;
   --select-gray: #bebebe;
+
+  /* 피아노 건반 색상표 */
+  --key-rainbow-c: #f200ff;
+  --key-rainbow-csharp: #df1175;
+  --key-rainbow-d: #ef0020;
+  --key-rainbow-dsharp: #eb4700;
+  --key-rainbow-e: #ff8800;
+  --key-rainbow-f: #fff400;
+  --key-rainbow-fsharp: #abe900;
+  --key-rainbow-g: #65dd0a;
+  --key-rainbow-gsharp: #04e6b2;
+  --key-rainbow-a: #00d0ff;
+  --key-rainbow-asharp: #3b52e6;
+  --key-rainbow-b: #6625ff;
+  --key-active: #006fda;
+
+  /* 단계 완료 창 글씨에 사용하는 색상 */
+  --bright-pink-500: #fc8aff;
+  --bright-pink-700: #da57f0;
+  --bright-pink-900: #b20d78;
+
+  /* 노란색 토글 버튼 색상 */
+  --bright-yellow-500: #ffdb0a;
+  --bright-yellow-700: #ffb213;
+
+  /* 단계 초록 버튼 */
+  --bright-green-500: #65db07;
+  --bright-green-700: #47b107;
+
+  /* 단계 하늘색 버튼 */
+  --bright-blue-500: #4cdafe;
+  --bright-blue-700: #08b9ff;
+
+  /* 보라색들 모음 */
+  --purple-100: #c286ff;
+  --purple-200: #b26bfb;
+  --purple-300: #9c59fe;
+  --purple-500: #6f53fd;
+  --purple-700: #7203ff;
+
+  /* 칠판 테두리 */
+  --brown-500: #bd8100;
+
+  /* 배경 그라데이션 */
+  --bg-gradient-start: var(--purple-300);
+  --bg-gradient-end: var(--purple-500);
+
+  /* 제목에 들어갈 색깔들 */
+  --title-purple-linear-start: #d384fd;
+  --title-purple-linear-end: #8567f7;
+  --title-yellow-linear-start: #fdf36d;
+  --title-yellow-linear-end: #ffbe2d;
 
   /* font-size, 글자 크기 */
   --font-size-xs: 0.75rem; /* 12px */
@@ -166,7 +219,6 @@
   --space-2: 8px;
   --space-3: 16px;
   --space-4: 24px;
-  --space-5: 32px;
 
   /* 반응형 BreakPoint */
   --breakpoint-tablet: 768px;
