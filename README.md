@@ -28,6 +28,8 @@ HTML5, CSS3, JavaScript
 │         └── 📁images/ # 이미지 파일 (svg, jpg 등)
 ├── 📁src/ # 소스 코드 루트
 │    ├── 📁components/ # 재사용 가능한 UI 컴포넌트
+│    │    ├──📁common/ # 공통 컴포넌트
+│    │    └──📁pages/ # 개별 페이지 컴포넌트
 │    ├── 📁styles/ # 공통 스타일 집합
 │    │     └── 📁common/ # reset, base, theme 등 전역 스타일
 │    └── 📁utils/
