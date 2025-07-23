@@ -194,19 +194,19 @@
   --title-yellow-linear-end: #ffbe2d;
 
   /* font-size, 글자 크기 */
-  --font-size-xs: 0.75rem; /* 12px */
-  --font-size-14: 0.875rem; /* 14px */
-  --font-size-base: 1rem; /* 16px */
-  --font-size-sm: 1.125rem; /* 18px */
-  --font-size-20: 1.25rem; /* 20px */
-  --font-size-22: 1.375rem; /* 22px */
-  --font-size-md: 1.5rem; /* 24px */
-  --font-size-26: 1.625rem; /* 26px */
-  --font-size-28: 1.75rem; /* 28px */
-  --font-size-lg: 1.875rem; /* 30px */
-  --font-size-32: 2rem; /* 32px */
-  --font-size-34: 2.125rem; /* 34px */
-  --font-size-xl: 2.25rem; /* 36px */
+  --font-size-xs: 12px;
+  --font-size-14: 14px;
+  --font-size-base: 16px;
+  --font-size-sm: 18px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+  --font-size-md: 24px;
+  --font-size-26: 26px;
+  --font-size-28: 28px;
+  --font-size-lg: 30px;
+  --font-size-32: 32px;
+  --font-size-34: 34px;
+  --font-size-xl: 36px;
 
   /* font-weight, 글자 두께 */
   --weight-xxs: 100;
