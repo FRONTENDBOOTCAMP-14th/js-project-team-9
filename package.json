@@ -1,8 +1,9 @@
 {
-  "name": "js-project-team-9",
+  "name": "Pianiverse",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "모두를 위한 피아노 우주, Pianiverse 입니다.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
