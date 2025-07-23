@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="모드를 선택하는 모달창 컴포넌트입니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모드를 선택하는 모달 컴포넌트</title>
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="./mode-select-modal.css" />
+    <script type="module" src="./mode-select-modal.js"></script>
+  </head>
+  <body class="mode-select-modal__body">
+    <h1>모드를 선택하는 모달 컴포넌트</h1>
+    <button class="btn-mode-select" type="button">모드 선택</button>
+    <dialog class="mode-select-modal">
+      <div class="mode-select-modal__wrapper">
+        <h2 class="mode-select-modal__title">모드 선택</h2>
+        <form class="mode-select-modal__form">
+          <input type="radio" name="mode" id="seeMode" value="see" /><label
+            for="seeMode"
+            >보면서 배우기</label
+          >
+          <input
+            type="radio"
+            name="mode"
+            id="listenMode"
+            value="listen"
+          /><label for="listenMode">들으면서 배우기</label>
+          <input
+            type="radio"
+            name="mode"
+            id="togetherMode"
+            value="together"
+          /><label for="togetherMode">함께 배우기</label>
+          <button class="mode-select-modal__button" type="submit">확인</button>
+        </form>
+        <button
+          class="mode-select-modal__button-close"
+          type="button"
+          aria-label="닫기"
+        >
+          <img
+            src="/assets/images/close_btn.svg"
+            alt=""
+            width="40"
+            height="43"
+          />
+        </button>
+      </div>
+    </dialog>
+  </body>
+</html>
