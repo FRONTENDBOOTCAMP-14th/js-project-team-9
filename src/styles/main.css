@@ -7,7 +7,6 @@
 
 @import "./common/_animation.css" layer(theme);
 @import "./common/_theme.css" layer(theme);
-@import "./_theme.css" layer(theme);
 
 [hidden] {
   display: none !important;
