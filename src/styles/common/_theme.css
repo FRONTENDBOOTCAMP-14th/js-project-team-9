@@ -208,6 +208,17 @@
   --font-size-34: 2.125rem; /* 34px */
   --font-size-xl: 2.25rem; /* 36px */
 
+  /* font-weight, 글자 두께 */
+  --weight-xxs: 100;
+  --weight-xs: 200;
+  --weight-sm: 300;
+  --weight-normal: 400;
+  --weight-md: 500;
+  --weight-lg: 600;
+  --weight-bold: 700;
+  --weight-xl: 800;
+  --weight-xxl: 900;
+
   /* border, 테두리 두께 */
   --border-base: 1px;
   --border-sm: 2px;
