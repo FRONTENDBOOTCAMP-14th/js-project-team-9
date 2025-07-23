@@ -76,7 +76,7 @@
 
     .mode-select-modal__button {
       grid-column: 1 / 3;
-      background: url("/assets/images/ok_btn.svg") no-repeat;
+      background: url("../../../../public/assets/images/ok_btn.svg") no-repeat;
       color: var(--white);
       border-radius: var(--radius-lg);
       padding: 0 0 var(--space-1) 0;
