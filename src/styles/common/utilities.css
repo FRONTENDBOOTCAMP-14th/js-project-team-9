@@ -1,2 +1,14 @@
 /* 공통으로 재사용할 수 있는 클래스 집합 */
 /* 클래스명 위에 어떤 목적으로 사용할 클래스인지 코멘트 부탁드립니다. */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
