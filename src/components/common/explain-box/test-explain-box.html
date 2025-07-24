@@ -1,0 +1,40 @@
+<!-- 임시 테스트 용으로 추후 삭제함 -->
+
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./explain-box.css" />
+  </head>
+  <body>
+    <!-- 설명창 컴포넌트 -->
+    <section class="explain-box" role="region" aria-label="설명창">
+      <p class="explain-box__text" aria-live="polite">이곳에 설명이 나옴</p>
+      <img
+        class="explain-box__image"
+        src="../../../../public/assets/images/note_character.svg"
+        alt=""
+      />
+      <div class="explain-box__buttons">
+        <!-- 형민님 버튼 컴포넌트 사용(좌우버튼) -->
+        <button
+          type="button"
+          class="btn-prev explain-box__button--prev js-explain-box-btnPrev"
+        >
+          왼
+        </button>
+        <button
+          type="button"
+          class="btn-next explain-box__button--next js-explain-box-btnNext"
+        >
+          오
+        </button>
+      </div>
+      <!-- 다시 버튼 같은 경우는 js에서 조건부 관리 복붙 후 클래스 추가(위치,js) -->
+      <button type="button" class="explain-box__button--retry">
+        다시 듣기
+      </button>
+    </section>
+
+    <script src="./explain-box.js"></script>
+  </body>
+</html>
