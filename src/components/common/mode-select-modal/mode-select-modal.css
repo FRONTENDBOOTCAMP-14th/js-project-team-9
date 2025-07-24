@@ -28,7 +28,7 @@
   }
 
   .mode-select-modal__title {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-24);
     text-align: center;
   }
 
@@ -43,7 +43,7 @@
     grid-template-columns: 1.5rem 1fr;
     column-gap: var(--space-2);
     row-gap: var(--space-3);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-18);
     margin-block-start: var(--space-4);
     margin-inline: var(--space-4);
     align-items: center;
