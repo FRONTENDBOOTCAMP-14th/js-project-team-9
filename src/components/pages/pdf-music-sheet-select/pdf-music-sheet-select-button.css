@@ -1,0 +1,33 @@
+body {
+  background: linear-gradient(
+    180deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-end) 100%
+  );
+}
+
+.music-sheet {
+  margin-inline: auto;
+  inline-size: 16.375rem;
+  aspect-ratio: 210/297;
+  background: #7003ff80;
+  border-radius: var(--border-4);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+
+  .music-sheet__select-button {
+    inline-size: 8.75rem;
+    block-size: 2.5rem;
+    padding: 0;
+    border: 0;
+    background: var(--purple-700);
+    border-radius: var(--radius-24);
+    box-shadow: 0 var(--shadow-2) 0 0 var(--purple-200);
+    margin-block-end: var(--shadow-2);
+    color: var(--white);
+    font-size: var(--font-size-18);
+    font-weight: var(--weight-900);
+  }
+}
