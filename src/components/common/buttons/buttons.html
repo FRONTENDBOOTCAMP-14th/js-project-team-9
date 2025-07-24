@@ -1,0 +1,121 @@
+<!--이미지에 의미가 있는경우 img태그, 없는 경우 css의 background처리 했습니다. -->
+<!-- sr리더기 접근성은 aria-label로만 관리하고 img태그의 alt는 비워놓습니다! -->
+<!-- 공통 스타일 클래스인 btn-round btn-squre는 스타일 수정하시면 안됩니다! 컴포넌트 내에서의 위치 지정 등 추가적인 스타일이 있는 경우 별도의 클래스를 이용해주세요.-->
+
+<!-- 확인버튼. 하드코딩 -->
+<button class="btn-ok" type="button" aria-label="확인 버튼"></button>
+
+<!-- 네모버튼. 버튼태그 내부에 [학습하기 계속하기 연주하기]등을 입력  -->
+<!-- css의 .btn-squre의 src를 변경하면 버튼의 색상이 변경됩니다. 기본 그린.-->
+<button
+  class="btn-square"
+  type="button"
+  aria-label="[버튼을 정의해 주세요]"
+></button>
+
+<!-- 이하 동그란 버튼 -->
+
+<!-- 이하 두가지 이상 기능에 연결되는 동그란 버튼들  -->
+
+<button
+  class="btn-prev btn-round"
+  type="button"
+  aria-label="[작업자가 컴포넌트에 적합한 이름을 입력]"
+>
+  <img
+    src="../../../../public/assets/images/prev_btn.svg"
+    alt=""
+    width="40"
+    height="43"
+  />
+</button>
+
+<button
+  class="btn-next btn-round"
+  type="button"
+  aria-label="[작업자가 컴포넌트에 적합한 이름을 입력]"
+>
+  <img
+    src="../../../../public/assets/images/next_btn.svg"
+    alt=""
+    width="40"
+    height="43"
+  />
+</button>
+
+<!-- 이하 한가지 기능에만 연결되는 동그란 버튼들 aria-label, [컴포넌트 내에서의 기능]하드코딩  -->
+<!-- 클래스 구조 class="[컴포넌트 내에서의 기능] [btn-round(동그란 버튼 공통스타일)]"-->
+<!-- 실사용 시 클래스 예시 class="modal__btn-close btn-round  js-clear-modal-btnClose"-->
+
+<button class="modal__btn-close btn-round" type="button" aria-label="닫기">
+  <img
+    src="../../../../public/assets/images/close_btn.svg"
+    alt=""
+    width="40"
+    height="43"
+  />
+</button>
+<button class="modal__btn-redo btn-round" type="button" aria-label="새로고침">
+  <img
+    src="../../../../public/assets/images/redo_btn.svg"
+    alt=""
+    width="40"
+    height="43"
+  />
+</button>
+<button class="btn-settings btn-round" type="button" aria-label="설정">
+  <img
+    src="../../../../public/assets/images/settings_btn.svg"
+    alt=""
+    width="40"
+    height="43"
+  />
+</button>
+<button class="btn-menu btn-round" type="button" aria-label="메뉴">
+  <img
+    src="../../../../public/assets/images/menu_btn.svg"
+    alt=""
+    width="40"
+    height="43"
+  />
+</button>
+<button class="btn-help btn-round" type="button" aria-label="도움말">
+  <img
+    src="../../../../public/assets/images/help_btn.svg"
+    alt=""
+    width="40"
+    height="43"
+  />
+</button>
+<button class="btn-home btn-round" type="button" aria-label="게임 홈으로">
+  <img
+    src="../../../../public/assets/images/home_btn.svg"
+    alt=""
+    width="40"
+    height="43"
+  />
+</button>
+<button
+  class="btn-confirm-clear btn-round"
+  type="button"
+  aria-label="다음 레벨"
+>
+  <img
+    src="../../../../public/assets/images/back_btn.svg"
+    alt=""
+    width="40"
+    height="43"
+  />
+</button>
+<button
+  class="btn-confirm-failed btn-round"
+  type="button"
+  aria-label="다음 레벨로 갈 수 없습니다"
+>
+  <img
+    src="../../../../public/assets/images/back_btn-disabled.svg"
+    alt=""
+    width="40"
+    height="43"
+  />
+</button>
