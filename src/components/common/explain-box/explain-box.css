@@ -2,33 +2,29 @@
 /* 버튼 스타일 css 파일 import 필요 */
 
 :root {
-  --ex-width: 574px;
-  --ex-height: 246px;
+  --ex-width: 35.875rem;
+  --ex-height: 15.375rem;
   --ex-line-height: 1.5;
   --ex-text-min-height: 50%;
   --ex-text-min-width: 70%;
   --ex-text-max-width: 80%;
   --ex-text-max-height: 80%;
-  --ex-img-inline-start: 36px;
+  --ex-img-inline-start: 2.25rem;
   --ex-img-block-end: 0;
   --ex-btn-block-start: 50%;
   --ex-inset-0: 0;
   --ex-btn-offset-inline-end: 5.23%;
   --ex-btn-offset-block-end: 9.76%;
-  --ex-letter-spacing: 0.64px;
+  --ex-letter-spacing: 0.04rem;
 }
-
-/* body {
-  margin: 50px;
-} */
 
 .explain-box {
   position: relative;
   width: var(--ex-width);
   height: var(--ex-height);
   background-color: var(--gray-700);
-  border: var(--border-lg) solid var(--brown-500);
-  border-radius: var(--radius-lg);
+  border: var(--border-4) solid var(--brown-500);
+  border-radius: var(--radius-16);
   overflow: visible;
 
   display: flex;
@@ -50,8 +46,8 @@
   max-height: var(--ex-text-max-height);
 
   color: var(--white);
-  font-size: var(--font-size-base);
-  font-weight: var(--weight-normal);
+  font-size: var(--font-size-16);
+  font-weight: var(--weight-400);
   line-height: var(--ex-line-height);
   letter-spacing: var(--ex-letter-spacing);
 
@@ -65,36 +61,25 @@
   inset-block-end: var(--ex-inset-0);
 }
 
-.explain-box__buttons {
-  position: absolute;
-  inset-block-start: var(--ex-btn-block-start);
-  inset-inline-start: var(--ex-inset-0);
-  width: 100%;
-  transform: translateY(-50%);
-  pointer-events: none;
-
-  display: flex;
-  justify-content: space-between;
-}
-
 .explain-box__button--prev,
 .explain-box__button--next {
+  position: absolute;
+  inset-block-start: var(--ex-btn-block-start);
   pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
-  position: relative;
-  z-index: 2;
 }
 
 .btn-prev {
-  transform: translateX(-50%);
+  inset-inline-start: var(--ex-inset-0);
+  transform: translate(-50%, -50%);
 }
 
 .btn-next {
-  transform: translateX(50%);
+  inset-inline-end: var(--ex-inset-0);
+  transform: translate(50%, -50%);
 }
 
 .explain-box__button--retry {
