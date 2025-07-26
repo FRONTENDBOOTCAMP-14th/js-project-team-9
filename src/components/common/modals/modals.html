@@ -1,0 +1,66 @@
+<!--모달 베이스-->
+    <dialog class="modal-base" open>
+      <button
+        class="modal-base__btn-close btn-round"
+        type="button"
+        aria-label="닫기"
+      >
+        <img
+          src="../../../../public/assets/images/close_btn.svg"
+          alt=""
+          width="40"
+          height="43"
+        />
+      </button>
+      </div>
+    </dialog>
+    <!--모드셀렉트 모달-->
+    <div class="mode-select-modal__wrapper">
+      <h2 class="mode-select-modal__title">모드 선택</h2>
+      <form class="mode-select-modal__form">
+        <input type="radio" name="mode" id="seeMode" value="see" /><label
+          for="seeMode"
+          >보면서 배우기</label
+        >
+        <input type="radio" name="mode" id="listenMode" value="listen" /><label
+          for="listenMode"
+          >들으면서 배우기</label
+        >
+        <input
+          type="radio"
+          name="mode"
+          id="togetherMode"
+          value="together"
+        /><label for="togetherMode">함께 배우기</label>
+        <button class="mode-select-modal__ok-btn btn-ok" type="submit">
+          확인
+        </button>
+      </form>
+    </div>
+    <!--다시 시도해 보세요 모달-->
+    <div class="retry-announce-modal__wrapper">
+      <p class="modal-annouce">다시 시도해 보세요!</p>
+      <button class="btn-ok" type="button">확인</button>
+    </div>
+    <!--업데이트 예정 모달-->
+    <div class="to-be-updated-announce-modal__wrapper">
+      <p class="to-be-updated-announce-modal__annouce announce">
+        다음 단계는<br />업데이트 예정입니다.
+      </p>
+      <button class="btn-ok" type="button">확인</button>
+    </div>
+    <!--계속하기 다시하기 모달-->
+    <div class="continue-restart-modal__wrapper">
+      <button
+        class="continue-restart-modal__btn-continue btn-square"
+        type="button"
+      >
+        계속하기
+      </button>
+      <button
+        class="continue-restart-modal__btn-restart btn-square"
+        type="button"
+      >
+        처음부터
+      </button>
+    </div>
