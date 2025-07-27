@@ -1,5 +1,3 @@
-/* 버튼 공용스타일 */
-
 button {
   background: transparent;
   border: 0;
@@ -7,7 +5,6 @@ button {
 }
 
 .btn-square {
-  grid-column: 1 / 3;
   background: url("../../../../public/assets/images/green_btn.svg") no-repeat;
   inline-size: 8rem;
   block-size: 2.625rem;
@@ -17,11 +14,14 @@ button {
   margin-block-start: var(--space-1);
   font-size: var(--font-size-18);
   font-weight: var(--weight-800);
-  .continue-restart-modal__btn-continue {
+  &.continue-restart-modal__btn-continue {
     background: url("../../../../public/assets/images/green_btn.svg") no-repeat;
   }
-  .continue-restart-modal__btn-restart {
+  &.continue-restart-modal__btn-restart {
     background: url("../../../../public/assets/images/pink_btn.svg") no-repeat;
+  }
+  &.mode-select-modal__btn-mode-select {
+    background: url("../../../../public/assets/images/purple_btn.svg") no-repeat;
   }
 }
 
@@ -70,36 +70,34 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 180px;
   min-width: 190px;
   margin: var(--space-4);
+  color: var(--purple-500);
   .mode-select-modal__title {
     font-size: var(--font-size-24);
     text-align: center;
-    color: var(--purple-500);
     font-weight: var(--weight-800);
   }
 
   .mode-select-modal__form {
-    place-self: center;
     display: grid;
-    place-items: center;
     grid-template-columns: 1.5rem 1fr;
     column-gap: var(--space-2);
     row-gap: var(--space-3);
     font-size: var(--font-size-18);
     margin-block-start: var(--space-4);
     margin-inline: var(--space-4);
-    color: var(--purple-500);
     label {
       text-align: left;
       font-weight: var(--weight-700);
-      justify-self: stretch;
+      cursor: pointer;
     }
-  }
-
-  label {
-    cursor: pointer;
+    .mode-select-modal__ok-btn {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
   }
 
   input {
@@ -120,10 +118,6 @@ button {
 
   input:focus-visible {
     outline: var(--border-base) solid var(--black);
-  }
-
-  .mode-select-modal__ok-btn/*ok btn고유와 위치선정으로 나누기*/ {
-    grid-column: 1 / 3;
   }
 }
 
