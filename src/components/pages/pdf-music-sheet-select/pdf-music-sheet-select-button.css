@@ -90,7 +90,8 @@ body {
   margin: var(--space-2);
 
   .music-sheet-modal__card {
-    button {
+    button,
+    .card-add-button {
       block-size: 4.125rem;
       aspect-ratio: 4/3;
       position: relative;
@@ -98,6 +99,14 @@ body {
       border-radius: var(--radius-4);
       background-color: var(--gray-50);
       justify-items: center;
+    }
+
+    .card-add-button {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
     }
 
     img {
@@ -119,6 +128,10 @@ body {
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow-wrap: break-word;
+    }
+
+    input[type="file"] {
+      display: none;
     }
   }
 }
