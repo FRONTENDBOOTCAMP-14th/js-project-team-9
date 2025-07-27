@@ -1,3 +1,15 @@
+/* 테스트용 코드 */
+
+body {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  gap: 1rem;
+  place-items: center;
+}
+
+/* 버튼 공용스타일 */
+
 button {
   background: transparent;
   border: 0;
@@ -54,7 +66,7 @@ button {
   border: var(--border-3) solid var(--purple-100);
   border-radius: var(--radius-24);
   box-shadow: 0 var(--shadow-4) 0 0 var(--purple-300);
-  /*가로세로 확인을 위한 하드코딩*/
+  overflow: visible;
   &::backdrop {
     background-color: #000c;
   }
@@ -140,6 +152,7 @@ button {
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
+  margin: var(--space-3) var(--space-4) var(--space-3) var(--space-4);
   p {
     font-size: var(--font-size-24);
     font-weight: var(--weight-800);
@@ -153,4 +166,5 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  margin: var(--space-3) var(--space-4) var(--space-3) var(--space-4);
 }
