@@ -12,3 +12,9 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* 포커스 시 시각적으로 표시되지 않도록 */
+.sr-only:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
