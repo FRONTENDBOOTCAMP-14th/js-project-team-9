@@ -1,4 +1,4 @@
-// navigation-controller 공통 모듈 import 해야함
+import { setupNavigation } from "../../../utils/navigation-controller.js";
 // 아직 모듈이 없기 때문에, 임시 더미 함수로 테스트
 
 function handleReplay(item) {
