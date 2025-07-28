@@ -129,10 +129,22 @@ body {
       -webkit-box-orient: vertical;
       overflow-wrap: break-word;
     }
+  }
 
-    input[type="file"] {
-      display: none;
+  .card-add {
+    position: relative;
+
+    #card-add {
+      position: absolute;
+      inset: 0;
+      border: 0;
+      z-index: -1;
     }
+  }
+
+  .card-add:focus-within {
+    outline: var(--border-1) solid var(--black);
+    border-radius: var(--radius-4);
   }
 }
 
