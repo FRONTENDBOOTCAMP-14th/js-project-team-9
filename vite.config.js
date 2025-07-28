@@ -35,6 +35,7 @@ export default defineConfig({
       input: {
         index: path.resolve(__dirname, "index.html"),
         ...findAllHtmlFiles(path.resolve(__dirname, "src")),
+        ...findAllHtmlFiles(path.resolve(__dirname, "pages")),
       },
     },
   },
