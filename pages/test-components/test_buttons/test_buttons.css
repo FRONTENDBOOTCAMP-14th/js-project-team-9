@@ -1,0 +1,82 @@
+/* 테스트용 코드 */
+
+body {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  gap: 1rem;
+  place-items: center;
+  background-color: mediumaquamarine;
+}
+
+/* 버튼 공용스타일 */
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+a {
+  cursor: pointer;
+}
+
+.btn-square {
+  background: url("../../../public/assets/images/green_btn.svg") no-repeat;
+  inline-size: 8rem;
+  block-size: 2.625rem;
+  color: var(--white);
+  padding: 0 0 var(--space-1) 0;
+  justify-self: center;
+  margin-block-start: var(--space-1);
+  font-size: var(--font-size-18);
+  font-weight: var(--weight-800);
+  &.continue-restart-modal__btn-continue {
+    background: url("../../../public/assets/images/green_btn.svg") no-repeat;
+  }
+  &.continue-restart-modal__btn-restart {
+    background: url("../../../../public/assets/images/pink_btn.svg") no-repeat;
+  }
+  &.mode-select-modal__btn-mode-select {
+    background: url("../../../../public/assets/images/purple_btn.svg") no-repeat;
+  }
+}
+
+.btn-round {
+  border-radius: var(--radius-round);
+  img {
+    border-radius: var(--radius-round);
+  }
+}
+
+.btn-ok {
+  background: url("../../../public/assets/images/ok_btn.svg") no-repeat;
+  inline-size: 5.625rem;
+  block-size: 2.625rem;
+  padding: 0 0 var(--space-1) 0;
+  margin-block-start: var(--space-1);
+  color: var(--white);
+  font-size: var(--font-size-18);
+  font-weight: var(--weight-800);
+}
+
+.modal-base__btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.btn-toggle .toggle-on {
+  display: none;
+}
+.btn-toggle[aria-pressed="true"] .toggle-on {
+  display: block;
+}
+.btn-toggle[aria-pressed="true"] .toggle-off {
+  display: none;
+}
