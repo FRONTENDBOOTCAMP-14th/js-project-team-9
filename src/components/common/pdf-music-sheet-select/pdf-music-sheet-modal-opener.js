@@ -21,28 +21,28 @@ const defaultMusicSheets = [
   {
     id: "default-1",
     name: "airplane",
-    src: "../../../../public/assets/images/airplane.png",
+    src: "/assets/images/airplane.png",
     type: "image",
     isDeletable: false,
   },
   {
     id: "default-2",
     name: "butterfly",
-    src: "../../../../public/assets/images/butterfly.png",
+    src: "/assets/images/butterfly.png",
     type: "image",
     isDeletable: false,
   },
   {
     id: "default-3",
     name: "little-star",
-    src: "../../../../public/assets/pdf/little-star.pdf",
+    src: "/assets/pdf/little-star.pdf",
     type: "pdf",
     isDeletable: false,
   },
   {
     id: "default-4",
     name: "three-bears",
-    src: "../../../../public/assets/images/three-bears.png",
+    src: "/assets/images/three-bears.png",
     type: "image",
     isDeletable: false,
   },
@@ -177,7 +177,7 @@ function createMusicSheetCard(musicSheet) {
   button.type = "button";
 
   const img = document.createElement("img");
-  img.src = "../../../../public/assets/images/thumbnail-sheet-music.JPG";
+  img.src = "/assets/images/thumbnail-sheet-music.JPG";
   img.alt = "";
   img.width = "80";
   img.height = "60";
