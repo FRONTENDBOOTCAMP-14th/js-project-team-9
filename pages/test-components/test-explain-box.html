@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Explain-Box 데모</title>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="../../src/components/common/explain-box/explain-box.css"
+    />
+  </head>
+  <body>
+    <!-- 설명창 컴포넌트 -->
+    <section class="explain-box" role="region" aria-label="설명창">
+      <p class="explain-box__text" aria-live="polite"></p>
+      <p class="sr-only" aria-live="polite" id="explain-status"></p>
+
+      <img
+        class="explain-box__image"
+        src="../../assets/images/note_character.svg"
+        alt=""
+      />
+
+      <div class="explain-box__buttons">
+        <button
+          type="button"
+          class="btn-prev explain-box__button--prev js-explain-box-btnPrev"
+        ></button>
+        <button
+          type="button"
+          class="btn-next explain-box__button--next js-explain-box-btnNext"
+        ></button>
+      </div>
+
+      <button
+        type="button"
+        class="explain-box__button--retry js-explain-box-btnRetry"
+        hidden
+      ></button>
+    </section>
+    <script type="module">
+      import { initExplainBox } from "../../src/components/common/explain-box/explain-box.js";
+
+      // json 파일 작성 전 테스트 확인용
+      const mode = "listen"; // listen | see | together
+      const explanations = [
+        { text: "첫 번째 설명입니다.", speak: "첫 설명", retry: true },
+        { text: "두 번째 설명입니다.", speak: "둘 설명", retry: true },
+        { text: "세 번째 설명입니다.", speak: "셋 설명", retry: true },
+      ];
+
+      initExplainBox({
+        explanations,
+        mode,
+        onSpeak: (t) => console.log("TTS:", t),
+      });
+    </script>
+  </body>
+</html>
