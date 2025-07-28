@@ -16,24 +16,32 @@ const LOCAL_STORAGE_KEY = "userMusicSheets";
 // 기본 제공 악보 데이터
 const defaultMusicSheets = [
   {
+    id: "default-1",
     name: "airplane",
     src: "../../../../public/assets/images/airplane.png",
     type: "image",
+    isDeletable: false,
   },
   {
+    id: "default-2",
     name: "butterfly",
     src: "../../../../public/assets/images/butterfly.png",
     type: "image",
+    isDeletable: false,
   },
   {
+    id: "default-3",
     name: "little-star",
     src: "../../../../public/assets/pdf/little-star.pdf",
     type: "pdf",
+    isDeletable: false,
   },
   {
+    id: "default-4",
     name: "three-bears",
     src: "../../../../public/assets/images/three-bears.png",
     type: "image",
+    isDeletable: false,
   },
 ];
 
@@ -50,6 +58,17 @@ musicSheetModalCloseButton.addEventListener("click", () => {
 
 // 선택한 악보 파일 종류에 따라 .music-sheet에 렌더링하기
 musicSheetSelectModal.addEventListener("click", ({ target }) => {
+  // 삭제 버튼 클릭 이벤트 처리
+  const deleteButton = target.closest(".card-delete-button");
+  if (deleteButton) {
+    const cardToDelete = deleteButton.closest(".music-sheet-modal__card");
+    if (cardToDelete) {
+      const musicSheetIdToDelete = cardToDelete.dataset.id;
+      handleDeleteMusicSheet(musicSheetIdToDelete);
+    }
+    return;
+  }
+
   const musicSheetCard = target.closest(".music-sheet-modal__card");
 
   if (!musicSheetCard || musicSheetCard.classList.contains("card-add")) return;
@@ -101,6 +120,7 @@ inputFile.addEventListener("change", ({ target }) => {
       // Base64 Data URL로 저장
       src: fileContent,
       type: fileType,
+      isDeletable: true,
     };
 
     const userMusicSheets = loadUserMusicSheets();
@@ -128,6 +148,11 @@ function createMusicSheetCard(musicSheet) {
   li.dataset.type = musicSheet.type;
   li.dataset.src = musicSheet.src;
 
+  // 사용자가 추가한 악보면 isDeletable 클래스 추가
+  if (musicSheet.isDeletable) {
+    li.classList.add("isDeletable");
+  }
+
   const button = document.createElement("button");
   button.type = "button";
 
@@ -142,6 +167,15 @@ function createMusicSheetCard(musicSheet) {
 
   li.append(button);
   button.append(img, span);
+
+  // 사용자가 추가한 악보에 삭제 버튼 추가
+  if (musicSheet.isDeletable) {
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("card-delete-button");
+    deleteButton.type = "button";
+    deleteButton.setAttribute("aria-label", "악보 삭제");
+    li.append(deleteButton);
+  }
 
   return li;
 }
@@ -176,4 +210,25 @@ function loadUserMusicSheets() {
 // localStorage에 사용자가 업로드한 악보 데이터 저장하기
 function saveUserMusicSheets(musicSheets) {
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(musicSheets));
+}
+
+function handleDeleteMusicSheet(idToDelete) {
+  const userMusicSheets = loadUserMusicSheets();
+  const defaultMusicSheetIds = defaultMusicSheets.map(
+    (musicSheet) => musicSheet.id
+  );
+
+  if (defaultMusicSheetIds.includes(idToDelete)) {
+    alert("기본 제공 악보는 삭제할 수 없습니다.");
+    return;
+  }
+
+  const updatedUserMusicSheets = userMusicSheets.filter(
+    (musicSheet) => musicSheet.id !== idToDelete
+  );
+
+  if (userMusicSheets.length !== updatedUserMusicSheets.length) {
+    saveUserMusicSheets(updatedUserMusicSheets);
+    renderMusicSheetCards();
+  }
 }
