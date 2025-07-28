@@ -7,6 +7,7 @@ body {
 }
 
 .music-sheet {
+  position: relative;
   margin-inline: auto;
   inline-size: 16.375rem;
   aspect-ratio: 210/297;
@@ -24,11 +25,15 @@ body {
     object-fit: contain;
   }
 
+  button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
   .music-sheet__select-button {
     inline-size: 8.75rem;
     block-size: 2.5rem;
-    padding: 0;
-    border: 0;
     background: var(--purple-700);
     border-radius: var(--radius-24);
     box-shadow: 0 var(--shadow-2) 0 0 var(--purple-200);
@@ -36,6 +41,12 @@ body {
     color: var(--white);
     font-size: var(--font-size-18);
     font-weight: var(--weight-900);
+  }
+
+  .music-sheet__close-button {
+    position: absolute;
+    inset-block-start: -0.75rem;
+    inset-inline-end: -0.75rem;
   }
 }
 

@@ -10,6 +10,9 @@ const musicSheetCardsContainer = musicSheetSelectModal.querySelector(
   ".music-sheet-modal__cards"
 );
 const musicSheetDisplay = document.querySelector(".music-sheet");
+const closeMusicSheetDisplayButton = document.querySelector(
+  ".music-sheet__close-button"
+);
 
 const LOCAL_STORAGE_KEY = "userMusicSheets";
 
@@ -94,8 +97,13 @@ musicSheetSelectModal.addEventListener("click", ({ target }) => {
 
   musicSheetElement.classList.add("music-sheet__container");
   fragment.append(musicSheetElement);
-  musicSheetDisplay.innerHTML = "";
+  // musicSheetDisplay.innerHTML = "";
   musicSheetDisplay.append(fragment);
+
+  musicSheetSelectButton.hidden = true;
+
+  musicSheetDisplay.classList.add("hasMusicSheet");
+  closeMusicSheetDisplayButton.hidden = false;
 
   musicSheetSelectModal.close();
 });
@@ -136,6 +144,18 @@ inputFile.addEventListener("change", ({ target }) => {
 
   // 파일을 Data URL(Base64)로 읽기
   reader.readAsDataURL(file);
+});
+
+closeMusicSheetDisplayButton.addEventListener("click", () => {
+  const currentMusicSheet = musicSheetDisplay.querySelector(
+    ".music-sheet__container"
+  );
+  if (currentMusicSheet) {
+    currentMusicSheet.remove();
+  }
+  musicSheetDisplay.classList.remove("hasMusicSheet");
+  closeMusicSheetDisplayButton.hidden = true;
+  musicSheetSelectButton.hidden = false;
 });
 
 // 페이지 로드할 때 초기 악보 목록 렌더링
