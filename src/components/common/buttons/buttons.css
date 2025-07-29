@@ -80,3 +80,34 @@ a {
 .btn-toggle[aria-pressed="true"] .toggle-off {
   display: none;
 }
+
+.btn-volume-slider {
+  position: relative;
+  width: 128px;
+  height: 27px;
+  display: inline-block;
+}
+
+.btn-volume-slider__volume-slider-bar {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 124px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.btn-volume-slider__volume-slider-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #ffdb0a;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.btn-volume-slider__volume-level path {
+  transition: stroke 0.2s ease-in-out;
+}
