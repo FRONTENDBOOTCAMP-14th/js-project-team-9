@@ -1,10 +1,10 @@
-body {
+/* body {
   background: linear-gradient(
     180deg,
     var(--bg-gradient-start) 0%,
     var(--bg-gradient-end) 100%
   );
-}
+} */
 
 .music-sheet {
   position: relative;
