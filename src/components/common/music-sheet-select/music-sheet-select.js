@@ -48,10 +48,14 @@ const defaultMusicSheets = [
   },
 ];
 
+// 모달 내에서 포커싱된 카드의 인덱스 저장하는 변수
+let currentCardIndex = -1;
+
 // 악보 선택 버튼을 누르면 악보 목록 갱신 후 모달 창 열기
 musicSheetSelectButton.addEventListener("click", () => {
   renderMusicSheetCards();
   musicSheetSelectModal.showModal();
+  focusFirstCard();
 });
 
 // 닫기 버튼을 누르면 모달 창 닫기
@@ -108,6 +112,52 @@ musicSheetSelectModal.addEventListener("click", ({ target }) => {
   musicSheetSelectModal.close();
 });
 
+musicSheetSelectModal.addEventListener("keydown", (e) => {
+  if (
+    !musicSheetSelectModal.open ||
+    !["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)
+  )
+    return;
+
+  const focusCards = [
+    ...musicSheetCardsContainer.querySelectorAll(
+      ".music-sheet-modal__card>button:not(.card-delete-button), .card-add label"
+    ),
+  ];
+  const focusedCard = document.activeElement;
+  const numColumns = window.innerWidth >= 1024 ? 6 : 4;
+
+  let nextCardIndex = currentCardIndex;
+
+  currentCardIndex = focusCards.indexOf(focusedCard);
+
+  switch (e.key) {
+    case "ArrowUp":
+      nextCardIndex -= numColumns;
+      break;
+    case "ArrowDown":
+      nextCardIndex += numColumns;
+      break;
+    case "ArrowLeft":
+      nextCardIndex--;
+      break;
+    case "ArrowRight":
+      nextCardIndex++;
+      break;
+  }
+
+  if (nextCardIndex < 0) {
+    nextCardIndex = focusCards.length - 1;
+  } else if (nextCardIndex >= focusCards.length) {
+    nextCardIndex = 0;
+  }
+
+  if (focusCards[nextCardIndex]) {
+    focusCards[nextCardIndex].focus();
+    currentCardIndex = nextCardIndex;
+  }
+});
+
 // 파일 업로드 이벤트
 inputFile.addEventListener("change", ({ target }) => {
   const file = target.files[0];
@@ -124,6 +174,8 @@ inputFile.addEventListener("change", ({ target }) => {
     const fileType = file.type.startsWith("image/") ? "image" : "pdf";
 
     const newUserMusicSheet = {
+      // 고유 id 생성하여 삭제할 때 파일을 찾을 수 있도록 함
+      id: `user-${Math.random().toString(36).substring(2, 10)}`,
       name: fileName,
       // Base64 Data URL로 저장
       src: fileContent,
@@ -167,6 +219,7 @@ function createMusicSheetCard(musicSheet) {
   li.classList.add("music-sheet-modal__card");
   li.dataset.type = musicSheet.type;
   li.dataset.src = musicSheet.src;
+  li.dataset.id = musicSheet.id;
 
   // 사용자가 추가한 악보면 isDeletable 클래스 추가
   if (musicSheet.isDeletable) {
@@ -193,7 +246,7 @@ function createMusicSheetCard(musicSheet) {
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("card-delete-button");
     deleteButton.type = "button";
-    deleteButton.setAttribute("aria-label", "악보 삭제");
+    deleteButton.setAttribute("aria-label", `${musicSheet.name} 악보 삭제`);
     li.append(deleteButton);
   }
 
@@ -250,5 +303,25 @@ function handleDeleteMusicSheet(idToDelete) {
   if (userMusicSheets.length !== updatedUserMusicSheets.length) {
     saveUserMusicSheets(updatedUserMusicSheets);
     renderMusicSheetCards();
+    focusFirstCard();
   }
+}
+
+function focusFirstCard() {
+  requestAnimationFrame(() => {
+    const firstCard = musicSheetCardsContainer.querySelector(
+      ".music-sheet-modal__card:not(.card-add) button"
+    );
+    if (firstCard) {
+      firstCard.focus();
+      const focusCards = [
+        ...musicSheetCardsContainer.querySelectorAll(
+          ".music-sheet-modal__card>button:not(.card-delete-button), .card-add label"
+        ),
+      ];
+      currentCardIndex = focusCards.indexOf(firstCard);
+    } else {
+      currentCardIndex = -1;
+    }
+  });
 }

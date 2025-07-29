@@ -80,6 +80,10 @@
     background: transparent;
     border: 0;
     padding: 0;
+
+    &:focus-visible {
+      outline-offset: 1px;
+    }
   }
 
   .music-sheet-modal__button-close {
@@ -171,6 +175,7 @@
 
   .card-add:focus-within {
     outline: var(--border-1) solid var(--black);
+    outline-offset: 1px;
     border-radius: var(--radius-4);
   }
 
