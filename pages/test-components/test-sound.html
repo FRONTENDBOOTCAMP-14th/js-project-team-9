@@ -1,0 +1,25 @@
+<!-- public/test-sound.html -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sound Test</title>
+  </head>
+  <body>
+    <h1>소리 테스트</h1>
+    <button id="playC4">C4 재생</button>
+    <button id="playGSharp3">G#3 재생</button>
+
+    <script type="module">
+      import { soundNote } from "../../src/utils/sound-utils.js";
+
+      document.getElementById("playC4").addEventListener("click", () => {
+        soundNote("C4");
+      });
+
+      document.getElementById("playGSharp3").addEventListener("click", () => {
+        soundNote("G#3", 1);
+      });
+    </script>
+  </body>
+</html>
