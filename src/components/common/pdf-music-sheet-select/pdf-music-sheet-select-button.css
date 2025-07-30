@@ -1,0 +1,188 @@
+body {
+  background: linear-gradient(
+    180deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-end) 100%
+  );
+}
+
+.music-sheet {
+  position: relative;
+  margin-inline: auto;
+  inline-size: 16.375rem;
+  aspect-ratio: 210/297;
+  background: #7003ff80;
+  border-radius: var(--border-4);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+
+  .music-sheet__container {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: contain;
+  }
+
+  button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
+  .music-sheet__select-button {
+    inline-size: 8.75rem;
+    block-size: 2.5rem;
+    background: var(--purple-700);
+    border-radius: var(--radius-24);
+    box-shadow: 0 var(--shadow-2) 0 0 var(--purple-200);
+    margin-block-end: var(--shadow-2);
+    color: var(--white);
+    font-size: var(--font-size-18);
+    font-weight: var(--weight-900);
+  }
+
+  .music-sheet__close-button {
+    position: absolute;
+    inset-block-start: -0.75rem;
+    inset-inline-end: -0.75rem;
+  }
+}
+
+.music-sheet-modal {
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  padding: var(--space-3);
+
+  &::backdrop {
+    background-color: #000c;
+  }
+
+  .music-sheet-modal__wrapper {
+    background: var(--white);
+    border: var(--border-4) solid var(--purple-100);
+    border-radius: var(--radius-24);
+    box-shadow: 0 var(--shadow-5) 0 0 var(--purple-300);
+    padding: var(--space-4);
+    color: var(--purple-500);
+    text-align: center;
+    font-weight: var(--weight-700);
+    line-height: 1;
+
+    .music-sheet-modal__title {
+      padding-block-end: var(--space-3);
+    }
+  }
+
+  button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
+  .music-sheet-modal__button-close {
+    position: absolute;
+    inset-block-start: var(--space-1);
+    inset-inline-end: var(--space-1);
+    border-radius: var(--radius-round);
+
+    img {
+      border-radius: var(--radius-round);
+    }
+  }
+}
+
+.music-sheet-modal__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin: var(--space-2);
+
+  .music-sheet-modal__card {
+    position: relative;
+
+    .card-delete-button {
+      position: absolute;
+      border: 0;
+      inset-block-start: -0.5rem;
+      inset-inline-end: -0.5rem;
+      width: 1.5rem;
+      height: 1.625rem;
+      border-radius: var(--radius-round);
+      background: url("../../../../public/assets/images/close_btn.svg") center /
+        contain no-repeat;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    button,
+    .card-add-button {
+      block-size: 4.125rem;
+      aspect-ratio: 4/3;
+      position: relative;
+      border: var(--border-2) solid var(--bright-yellow-700);
+      border-radius: var(--radius-4);
+      background-color: var(--gray-50);
+      justify-items: center;
+    }
+
+    .card-add-button {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    img {
+      filter: blur(1px);
+    }
+
+    span {
+      font-size: var(--font-size-14);
+      position: absolute;
+      inset-inline: var(--space-2);
+      inset-block-start: 50%;
+      transform: translateY(-50%);
+      align-content: center;
+      inline-size: 4.25rem;
+      max-block-size: 2.625rem;
+      overflow: hidden;
+      /* text-overflow: ellipsis; */
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow-wrap: break-word;
+    }
+  }
+
+  .card-add {
+    position: relative;
+
+    #card-add {
+      position: absolute;
+      inset: 0;
+      border: 0;
+      z-index: -1;
+    }
+  }
+
+  .card-add:focus-within {
+    outline: var(--border-1) solid var(--black);
+    border-radius: var(--radius-4);
+  }
+
+  .isDeletable .card-delete-button {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .music-sheet-modal__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

@@ -1,0 +1,90 @@
+@import url(../../../styles/main.css);
+/* 버튼 스타일 css 파일 import 필요 */
+@import url(../buttons/buttons.css);
+
+:root {
+  --ex-width: 35.875rem;
+  --ex-height: 15.375rem;
+  --ex-line-height: 1.5;
+  --ex-text-min-height: 50%;
+  --ex-text-min-width: 70%;
+  --ex-text-max-width: 80%;
+  --ex-text-max-height: 80%;
+  --ex-img-inline-start: 2.25rem;
+  --ex-img-block-end: 0;
+  --ex-btn-block-start: 50%;
+  --ex-inset-0: 0;
+  --ex-btn-offset-inline-end: 5.23%;
+  --ex-btn-offset-block-end: 9.76%;
+  --ex-letter-spacing: 0.04rem;
+}
+
+.explain-box {
+  position: relative;
+  width: var(--ex-width);
+  height: var(--ex-height);
+  background-color: var(--gray-700);
+  border: var(--border-4) solid var(--brown-500);
+  border-radius: var(--radius-16);
+  overflow: visible;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+}
+
+.explain-box__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: scroll;
+
+  min-width: var(--ex-text-min-width);
+  min-height: var(--ex-text-min-height);
+  max-width: var(--ex-text-max-width);
+  max-height: var(--ex-text-max-height);
+
+  color: var(--white);
+  font-size: var(--font-size-16);
+  font-weight: var(--weight-400);
+  line-height: var(--ex-line-height);
+  letter-spacing: var(--ex-letter-spacing);
+
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.explain-box__image {
+  position: absolute;
+  inset-inline-start: var(--ex-img-inline-start);
+  inset-block-end: var(--ex-inset-0);
+}
+
+.explain-box__button--prev,
+.explain-box__button--next {
+  position: absolute;
+  inset-block-start: var(--ex-btn-block-start);
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-prev {
+  inset-inline-start: var(--ex-inset-0);
+  transform: translate(-50%, -50%);
+}
+
+.btn-next {
+  inset-inline-end: var(--ex-inset-0);
+  transform: translate(50%, -50%);
+}
+
+.explain-box__button--retry {
+  position: absolute;
+  inset-inline-end: calc(var(--ex-btn-offset-inline-end));
+  inset-block-end: calc(var(--ex-btn-offset-block-end));
+}

@@ -1,0 +1,45 @@
+<!-- 설명창 컴포넌트 -->
+<section class="explain-box" role="region" aria-label="설명창">
+  <p class="explain-box__text" aria-live="polite"></p>
+  <!-- 스크린리더 전용 안내 영역 -->
+  <p class="sr-only" aria-live="polite" id="explain-status"></p>
+  <!-- 디자인 외 기능 없어 alt 작성하지 않음 -->
+  <img
+    class="explain-box__image"
+    src="../../../../public/assets/images/note_character.svg"
+    alt=""
+  />
+  <div class="explain-box__buttons">
+    <!-- 형민님 버튼 컴포넌트 사용(스타일 클래스 미리 작성했음) -->
+    <!-- 모든 버튼은 형민님이 붙이신 스타일 클래스명에 따라 변경이 있을 수 있음 체크필요 -->
+    <!-- 접근성 ui 담당자에게 맡김 -->
+    <button
+      type="button"
+      class="btn-prev btn-round explain-box__button--prev js-explain-box-btnPrev"
+    >
+      <img
+        src="../../../../public/assets/images/prev_btn.svg"
+        alt=""
+        width="40"
+        height="43"
+      />
+    </button>
+    <button
+      type="button"
+      class="btn-next btn-round explain-box__button--next js-explain-box-btnNext"
+    >
+      <img
+        src="../../../../public/assets/images/next_btn.svg"
+        alt=""
+        width="40"
+        height="43"
+      />
+    </button>
+  </div>
+  <!-- ui 클래스명에 따라 js 클래스명 달라질 수 있음 -->
+  <button
+    type="button"
+    class="btn-square explain-box__button--retry js-explain-box-btnRetry"
+    hidden
+  ></button>
+</section>
