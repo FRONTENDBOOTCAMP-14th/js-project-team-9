@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="악보를 선택하고 표시합니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../src/styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="../../src/components/common/music-sheet-select/music-sheet-select.css"
+    />
+    <script
+      type="module"
+      src="../../src/components/common/music-sheet-select/music-sheet-modal.js"
+    ></script>
+    <title>악보 선택 모달 컴포넌트</title>
+  </head>
+  <body>
+    <h1>악보 선택 모달 컴포넌트</h1>
+    <!-- 악보 표시 영역 컴포넌트 -->
+    <div class="music-sheet">
+      <!-- 파일 형식에 따라 iframe 또는 img 요소 추가 -->
+      <!-- 추가되는 요소의 클래스는 "music-sheet__container" -->
+      <button class="music-sheet__select-button" type="button">
+        악보 선택
+      </button>
+      <button
+        hidden
+        class="music-sheet__close-button"
+        type="button"
+        aria-label="악보 닫기"
+      >
+        <img src="/assets/images/close_btn.svg" alt="" width="40" height="43" />
+      </button>
+    </div>
+    <!-- 악보 선택 모달창 컴포넌트 -->
+    <dialog class="music-sheet-modal">
+      <div class="music-sheet-modal__wrapper">
+        <h2 class="music-sheet-modal__title">연주할 악보를 선택해 주세요.</h2>
+        <ul class="music-sheet-modal__cards">
+          <!-- 파일을 열 때 악보 목록 렌더링 -->
+          <!-- 악보 추가 버튼 컴포넌트 -->
+          <li class="music-sheet-modal__card card-add">
+            <label aria-label="악보 추가" for="card-add">
+              <div class="card-add-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M11.9395 0.5C13.2976 0.5 14.3633 1.56572 14.3633 2.92383V9.5166H21.0762C22.4341 9.5166 23.4998 10.5816 23.5 11.9395C23.5 13.2976 22.4343 14.3633 21.0762 14.3633H14.3633V21.0762C14.3633 22.4343 13.2976 23.5 11.9395 23.5C10.5816 23.4998 9.5166 22.4341 9.5166 21.0762V14.3633H2.92383C1.56572 14.3633 0.5 13.2976 0.5 11.9395C0.500229 10.5816 1.56586 9.5166 2.92383 9.5166H9.5166V2.92383C9.5166 1.56586 10.5816 0.500229 11.9395 0.5Z"
+                    fill="#FFDB0A"
+                    stroke="#FFB213"
+                  />
+                </svg>
+              </div>
+            </label>
+            <input type="file" name="card-add" id="card-add" />
+            <button
+              type="button"
+              class="card-delete-button"
+              aria-label="악보 삭제"
+            ></button>
+          </li>
+        </ul>
+      </div>
+      <button
+        class="music-sheet-modal__button-close"
+        type="button"
+        aria-label="닫기"
+      >
+        <img src="/assets/images/close_btn.svg" alt="" width="40" height="43" />
+      </button>
+    </dialog>
+  </body>
+</html>

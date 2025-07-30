@@ -1,5 +1,6 @@
 @import url(../../../styles/main.css);
 /* 버튼 스타일 css 파일 import 필요 */
+@import url(../buttons/buttons.css);
 
 :root {
   --ex-width: 35.875rem;
