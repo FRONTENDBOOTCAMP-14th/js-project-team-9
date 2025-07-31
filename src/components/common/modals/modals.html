@@ -1,0 +1,236 @@
+<!--모달 베이스-->
+<dialog class="modal-base js-modal-base-modalBase">
+  <button
+    class="modal-base__btn-close btn-round js-modal-base-btnClose"
+    type="button"
+    aria-label="닫기"
+  >
+    <img
+      src="../../../public/assets/images/close_btn.svg"
+      alt=""
+      width="40"
+      height="43"
+    />
+  </button>
+  <div class="js-modal-base-contentArea"></div>
+</dialog>
+<!--모드셀렉트 모달-->
+<div
+  class="mode-select-modal__wrapper js-mode-select-modal-modeSelectModalWrapper"
+  style="display: none"
+>
+  <h2 class="mode-select-modal__title">모드 선택</h2>
+  <form class="mode-select-modal__form">
+    <input type="radio" name="mode" id="seeMode" value="see" /><label
+      for="seeMode"
+      >보면서 배우기</label
+    >
+    <input type="radio" name="mode" id="listenMode" value="listen" /><label
+      for="listenMode"
+      >들으면서 배우기</label
+    >
+    <input type="radio" name="mode" id="togetherMode" value="together" /><label
+      for="togetherMode"
+      >함께 배우기</label
+    >
+    <button class="mode-select-modal__ok-btn btn-ok" type="submit">확인</button>
+  </form>
+</div>
+
+<!--다시 시도해 보세요 모달-->
+<div
+  class="retry-announce-modal__wrapper js-retry-announce-modal-retryAnnounceModalWrapper"
+  style="display: none"
+>
+  <p class="modal-annouce">다시 시도해 보세요!</p>
+  <button class="btn-ok" type="button">확인</button>
+</div>
+
+<!--업데이트 예정 모달-->
+<div
+  class="to-be-updated-announce-modal__wrapper js-to-be-updated-announce-modal-toBeUpdatedAnnounceModalWrapper"
+  style="display: none"
+>
+  <p class="to-be-updated-announce-modal__annouce announce">
+    다음 단계는<br />업데이트 예정입니다.
+  </p>
+  <button class="btn-ok js-modal-base-btnClose" type="button">확인</button>
+</div>
+
+<!--계속하기 다시하기 모달-->
+<div
+  class="continue-restart-modal__wrapper js-continue-restart-modal-continueRestartModalWrapper"
+  style="display: none"
+>
+  <button class="continue-restart-modal__btn-continue btn-square" type="button">
+    계속하기
+  </button>
+  <button class="continue-restart-modal__btn-restart btn-square" type="button">
+    처음부터
+  </button>
+</div>
+<!--볼륨조절과 핫키 모달-->
+<div
+  class="volume-controller-hotkeys-modal__wrapper js-volume-controller-hotkeys-modal-volumeControllerHotkeysModalWrapper"
+  style="display: none"
+>
+  <div class="btn-volume-slider-wrapper js-volume-slider-wrapper">
+    <svg
+      class="btn-volume-slider__volume-icon js-btn-volume-slider-volumeIcon"
+      aria-hidden="true"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M21 17V12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12V17"
+        stroke="#FFB213"
+        stroke-width="1.5"
+      />
+      <path
+        d="M22 15.5V17.5"
+        stroke="#FFB213"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M2 15.5V17.5"
+        stroke="#FFB213"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M8 13.8446C8 13.0802 8 12.698 7.82526 12.4323C7.73733 12.2985 7.62061 12.188 7.4844 12.1095C7.21371 11.9535 6.84812 11.9896 6.11694 12.0617C4.88487 12.1831 4.26884 12.2439 3.82737 12.5764C3.60394 12.7448 3.41638 12.9593 3.27646 13.2067C3 13.6955 3 14.3395 3 15.6276V17.1933C3 18.4685 3 19.1061 3.28198 19.5986C3.38752 19.7829 3.51981 19.9491 3.67416 20.0913C4.08652 20.4714 4.68844 20.5901 5.89227 20.8275C6.73944 20.9945 7.16302 21.078 7.47564 20.9021C7.591 20.8372 7.69296 20.7493 7.77572 20.6434C8 20.3565 8 19.9078 8 19.0104V13.8446Z"
+        stroke="#FFB213"
+        stroke-width="1.5"
+      />
+      <path
+        d="M16 13.8446C16 13.0802 16 12.698 16.1747 12.4323C16.2627 12.2985 16.3794 12.188 16.5156 12.1095C16.7863 11.9535 17.1519 11.9896 17.8831 12.0617C19.1151 12.1831 19.7312 12.2439 20.1726 12.5764C20.3961 12.7448 20.5836 12.9593 20.7235 13.2067C21 13.6955 21 14.3395 21 15.6276V17.1933C21 18.4685 21 19.1061 20.718 19.5986C20.6125 19.7829 20.4802 19.9491 20.3258 20.0913C19.9135 20.4714 19.3116 20.5901 18.1077 20.8275C17.2606 20.9945 16.837 21.078 16.5244 20.9021C16.409 20.8372 16.307 20.7493 16.2243 20.6434C16 20.3565 16 19.9078 16 19.0104V13.8446Z"
+        stroke="#FFB213"
+        stroke-width="1.5"
+      />
+    </svg>
+    <div
+      class="btn-volume-slider__volume-slider-bar js-btn-volume-slider-volumeSliderBar"
+      tabindex="0"
+    >
+      <input
+        class="btn-volume-slider js-btn-volume-slider"
+        type="range"
+        id="volume-slider"
+        tabindex="-1"
+      />
+      <svg
+        class="btn-volume-slider__volume-slider-design"
+        aria-hidden="true"
+        width="128"
+        height="27"
+        viewBox="0 0 128 27"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_d_235_307)">
+          <rect x="2" y="2" width="124" height="20" rx="10" fill="#FFB213" />
+          <rect
+            x="1"
+            y="1"
+            width="126"
+            height="22"
+            rx="11"
+            stroke="white"
+            stroke-width="2"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_d_235_307"
+            x="0"
+            y="0"
+            width="128"
+            height="27"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="3" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_235_307"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_235_307"
+              result="shape"
+            />
+          </filter>
+        </defs>
+      </svg>
+      <div
+        class="btn-volume-slider__volume-slider-fill js-btn-volume-slider-volumeSliderFill"
+      ></div>
+      <label class="sr-only" for="volume-slider">볼륨 조절 슬라이더</label>
+    </div>
+    <button class="volume-controller-hotkeys-modal__btn-hotkeys btn-square">
+      단축키
+    </button>
+  </div>
+</div>
+
+<!--실험용 개별 버튼들
+    <button class="step-page__btn-settings btn-round js-step-page-btnSettings" type="button" aria-label="설정">
+      <img
+        src="../../../public/assets/images/settings_btn.svg"
+        alt=""
+        width="40"
+        height="43"
+      />
+    </button>
+
+    <button
+      class="clear-modal__btn-confirm-clear btn-round js-clear-modal-btnConfirmClear"
+      type="button"
+      aria-label="다음 레벨"
+    >
+      <img
+        src="../../../public/assets/images/back_btn.svg"
+        alt=""
+        width="40"
+        height="43"
+      />
+    </button>
+
+    <button
+      class="main-page__btn-mode-select btn-square js-main-page-btnModeSelect"
+      type="button"
+    >
+      모드선택
+    </button>
+
+    <button
+      class="step-page__btn-menu btn-round js-step-page-btnMenu"
+      type="button"
+      aria-label="메뉴"
+    >
+      <img
+        src="../../../public/assets/images/menu_btn.svg"
+        alt=""
+        width="40"
+        height="43"
+      />
+    </button>
+  -->

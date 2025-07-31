@@ -1,0 +1,121 @@
+/* 모달창 공통 스타일 */
+
+.modal-base {
+  position: relative;
+  color: var(--purple-500);
+  line-height: 1;
+  font-weight: var(--weight-bold);
+  background: var(--white);
+  border: var(--border-3) solid var(--purple-100);
+  border-radius: var(--radius-24);
+  box-shadow: 0 var(--shadow-4) 0 0 var(--purple-300);
+  overflow: visible;
+  &::backdrop {
+    background-color: #000c;
+  }
+}
+.modal-base__btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+/* 모드 선택 모달 컴포넌트 스타일 */
+.mode-select-modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  min-width: 190px;
+  margin: var(--space-4);
+  color: var(--purple-500);
+  .mode-select-modal__title {
+    font-size: var(--font-size-24);
+    text-align: center;
+    font-weight: var(--weight-800);
+  }
+
+  .mode-select-modal__form {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    column-gap: var(--space-2);
+    row-gap: var(--space-3);
+    font-size: var(--font-size-18);
+    margin-block-start: var(--space-4);
+    margin-inline: var(--space-4);
+    label {
+      text-align: left;
+      font-weight: var(--weight-700);
+      cursor: pointer;
+    }
+    .mode-select-modal__ok-btn {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+  }
+
+  input {
+    appearance: none;
+    inline-size: 1.375rem;
+    block-size: 1.375rem;
+    border: var(--border-1) solid var(--bright-green-500);
+    box-shadow: 0 0 0 var(--shadow-1) var(--bright-green-500);
+    border-radius: var(--radius-round);
+    cursor: pointer;
+  }
+
+  input:checked {
+    background-color: var(--bright-green-500);
+    border: var(--border-2) solid var(--bright-green-500);
+    box-shadow: 0 0 0 var(--shadow-8) var(--bright-green-500);
+  }
+
+  input:focus-visible {
+    outline: var(--border-base) solid var(--black);
+  }
+}
+
+/* 그밖의 내가 만든 내부컴포넌트들 */
+.retry-announce-modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  p {
+    font-size: var(--font-size-24);
+    text-align: center;
+    color: var(--purple-500);
+    font-weight: var(--weight-800);
+  }
+}
+
+.to-be-updated-announce-modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  margin: var(--space-3) var(--space-4) var(--space-3) var(--space-4);
+  p {
+    font-size: var(--font-size-24);
+    font-weight: var(--weight-800);
+    text-align: center;
+    color: var(--purple-500);
+  }
+}
+
+.continue-restart-modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: var(--space-3) var(--space-4) var(--space-3) var(--space-4);
+}
+
+.volume-controller-hotkeys-modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: var(--space-1) var(--space-4) var(--space-3) var(--space-4);
+}
