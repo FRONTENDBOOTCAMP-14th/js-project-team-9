@@ -70,33 +70,86 @@ a {
   display: none;
 }
 
-.btn-volume-slider {
-  position: relative;
-  width: 128px;
-  height: 27px;
-  display: inline-block;
+/* 볼륨슬라이더 버튼 영역 */
+/* 여기서는 일부 배경 SVG 이미지와의 정밀한 위치(좌표) 조정을 위해 rem 대신 px 단위를 사용함. */
+.btn-volume-slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: center;
+  width: 7.75rem;
+  height: 56rem;
 }
 
 .btn-volume-slider__volume-slider-bar {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 124px;
-  height: 20px;
-  cursor: pointer;
+  position: relative;
+  width: 128px;
+  height: 27px;
+  z-index: 2;
 }
 
-.btn-volume-slider__volume-slider-fill {
+.btn-volume-slider__volume-slider-design {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
   height: 100%;
+}
+/* 볼륨슬라이더 : 기존 인풋태크 스타일 제거 코드 */
+.btn-volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 0%;
   width: 0%;
-  background-color: #ffdb0a;
-  border-radius: 10px;
-  pointer-events: none;
+  z-index: 1;
 }
 
-.btn-volume-slider__volume-level path {
-  transition: stroke 0.2s ease-in-out;
+.btn-volume-slider::-webkit-slider-runnable-track {
+  background: transparent;
+  border: none;
+}
+
+.btn-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.btn-volume-slider::-moz-range-track {
+  background: transparent;
+  border: none;
+}
+
+.btn-volume-slider::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border: 0;
+}
+
+.btn-volume-slider__volume-slider-bar:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  border-radius: var(--radius-8);
+}
+
+/* 볼륨이 0인경우 볼륨아이콘을 회색으로 변경*/
+
+.is-muted .btn-volume-slider__volume-icon path {
+  stroke: #b3b3b3;
+}
+
+/* 볼륨 값에 따라 채워질 영역 스타일 색상조절 가능 */
+.btn-volume-slider__volume-slider-fill {
+  position: absolute;
+  top: 2.2px;
+  left: 2.7px;
+  max-width: 122.3px;
+  width: 100%;
+  background-color: #ffdb0a;
+  border-radius: var(--radius-8);
+  z-index: 2;
+  pointer-events: none;
+  width: 0%;
+  height: 73%;
 }
