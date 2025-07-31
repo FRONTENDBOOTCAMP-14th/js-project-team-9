@@ -1,4 +1,4 @@
-// import { soundNote } from "./sound-utils.js";
+import { soundNote } from "./sound-utils.js";
 // highlightkey 공통 모듈 import 필요(highlightKey()라고 가정하고 작성)
 // soundNote와 highlightKey가 동시에 작동하는 playNote()도 import 필요(이름 변동 가능 o)
 
@@ -20,7 +20,9 @@ export function handleAutoAction(auto, mode) {
 
     case "quizNote":
       if (type === "game") {
-        startGameQuiz(auto, mode);
+        if (mode === "together") startGameTogetherQuiz(auto, mode);
+        else if (mode === "see") startGameSee(auto, mode);
+        else if (mode === "listen") startGameListen(auto, mode);
       } else {
         startLearnQuiz(auto, mode);
       }
