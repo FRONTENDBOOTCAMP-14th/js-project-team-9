@@ -41,11 +41,9 @@ export function startGameSee(auto, mode) {
  * 정답/오답 버튼 렌더링 및 클릭 핸들링
  */
 function renderQuizButtons(answer, distractors, compareBy) {
-  const container = document.querySelector(".explain-box__content");
+  const container = document.querySelector(".quiz-button-list");
   if (!container) {
-    console.warn(
-      "퀴즈 버튼 컨테이너(.quiz-button-container)를 찾을 수 없습니다."
-    );
+    console.warn("퀴즈 버튼 리스트(.quiz-button-list)를 찾을 수 없습니다.");
     return;
   }
 
@@ -59,7 +57,7 @@ function renderQuizButtons(answer, distractors, compareBy) {
   shuffled.forEach((note) => {
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "quiz-option-btn";
+    btn.className = "quiz-option__button, btn-square";
     btn.textContent = convertScaleToKorean(note);
     btn.onclick = () => handleAnswerClick(note, answer, compareBy);
     container.appendChild(btn);
