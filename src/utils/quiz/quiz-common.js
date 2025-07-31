@@ -55,7 +55,7 @@ export function convertScaleToKorean(note) {
     B: "시",
   };
 
-  const [scale, octave] = parseNote(note); // ✅ 여기!
+  const [scale, octave] = parseNote(note);
   if (!scale || !map[scale]) return note;
 
   return octave ? `${map[scale]}${octave}` : map[scale]; // 옥타브 포함 여부 유연하게 처리
