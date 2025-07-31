@@ -1,0 +1,83 @@
+@import url(../src/components/common/buttons/buttons.css);
+
+body {
+  background: linear-gradient(
+    180deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-end) 100%
+  );
+  block-size: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: calc(var(--space-3) * 5);
+}
+
+header {
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  h1 {
+    padding: var(--space-2);
+    font-size: calc(var(--font-size-42) * 2);
+    font-weight: var(--weight-900);
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--white);
+    -webkit-text-stroke: 16px transparent;
+    background: linear-gradient(
+      180deg,
+      var(--title-purple-linear-start) 0%,
+      var(--title-purple-linear-end) 100%
+    );
+    background-clip: text;
+  }
+
+  h2 {
+    font-size: var(--font-size-42);
+    font-weight: var(--weight-900);
+    line-height: 1;
+    color: transparent;
+    background: linear-gradient(
+      180deg,
+      var(--title-yellow-linear-start) 0%,
+      var(--title-yellow-linear-end) 100%
+    );
+    background-clip: text;
+  }
+
+  nav {
+    position: absolute;
+    inset-block-start: var(--space-4);
+    inset-inline-end: calc(var(--space-3) * 2);
+  }
+}
+
+.menus__container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--space-2);
+
+  .menus__content {
+    .btn-square {
+      display: block;
+      align-content: center;
+      text-align: center;
+    }
+
+    &:nth-of-type(2) > .btn-square {
+      background: url("../public/assets/images/sky_btn.svg") no-repeat;
+    }
+
+    &:nth-of-type(3) > .btn-square {
+      background: url("../public/assets/images/pink_btn.svg") no-repeat;
+    }
+
+    &:nth-of-type(4) > .btn-square {
+      background: url("../public/assets/images/purple_btn.svg") no-repeat;
+    }
+  }
+}
