@@ -1,10 +1,10 @@
-body {
+/* body {
   background: linear-gradient(
     180deg,
     var(--bg-gradient-start) 0%,
     var(--bg-gradient-end) 100%
   );
-}
+} */
 
 .music-sheet {
   position: relative;
@@ -80,6 +80,10 @@ body {
     background: transparent;
     border: 0;
     padding: 0;
+
+    &:focus-visible {
+      outline-offset: 1px;
+    }
   }
 
   .music-sheet-modal__button-close {
@@ -171,6 +175,7 @@ body {
 
   .card-add:focus-within {
     outline: var(--border-1) solid var(--black);
+    outline-offset: 1px;
     border-radius: var(--radius-4);
   }
 
