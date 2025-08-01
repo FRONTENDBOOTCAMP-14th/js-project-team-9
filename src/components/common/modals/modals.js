@@ -15,47 +15,81 @@
 5. .js-modal-base-btnClose을 누르면 모달창이 닫힘.
 */
 
-  // 모달 베이스 변수 선언
-  const modalBase = document.querySelector('.js-modal-base-modalBase');
-  const modalContentArea = document.querySelector('.js-modal-base-contentArea');
-  const modalCloseButton = document.querySelector('.js-modal-base-btnClose');
+import volumeControl from "../buttons/buttons-volume-control";
+const modalController = {
+  volumeControl: volumeControl,
+  init: function () {
+    // 모달 베이스 변수 선언
+    const modalBase = document.querySelector(".js-modal-base-modalBase");
+    const modalContentArea = document.querySelector(
+      ".js-modal-base-contentArea"
+    );
+    const modalCloseButton = document.querySelector(".js-modal-base-btnClose");
 
-  // 모달을 여는 트리거 버튼들 변수 선언
-  const btnMenu = document.querySelector('.js-step-page-btnMenu');
-  const btnConfirmClear = document.querySelector('.js-clear-modal-btnConfirmClear');
-  const btnModeSelect = document.querySelector('.js-main-page-btnModeSelect');
+    // 모달을 여는 트리거 버튼들 변수 선언
+    const btnMenu = document.querySelector(".js-step-page-btnMenu");
+    const btnConfirmClear = document.querySelector(
+      ".js-clear-modal-btnConfirmClear"
+    );
+    const btnModeSelect = document.querySelector(".js-main-page-btnModeSelect");
+    const btnSettings = document.querySelector(".js-step-page-btnSettings");
 
-  // 모달에 들어갈 컨텐츠 wrapper
-  const continueRestartModal = document.querySelector('.js-continue-restart-modal-continueRestartModalWrapper');
-  const toBeUpdatedModal = document.querySelector('.js-to-be-updated-announce-modal-toBeUpdatedAnnounceModalWrapper');
-  const modeSelectModal = document.querySelector('.js-mode-select-modal-modeSelectModalWrapper');
-  const retryAnnounceModal = document.querySelector('.js-retry-announce-modal-retryAnnounceModalWrapper');
-  
-const closeModal = () => {
-    modalBase.close();
-  };
-  const openModal = (contentNode) => {
-    modalContentArea.innerHTML = '';
-    const clonedNode = contentNode.cloneNode(true);
-    clonedNode.style.display = '';
-    modalContentArea.appendChild(clonedNode);
-    modalBase.showModal();
-  };
-  modalBase.addEventListener('close', () => {
-    modalContentArea.innerHTML = '';
-  });
+    // 모달에 들어갈 컨텐츠 wrapper
+    const continueRestartModal = document.querySelector(
+      ".js-continue-restart-modal-continueRestartModalWrapper"
+    );
+    const toBeUpdatedModal = document.querySelector(
+      ".js-to-be-updated-announce-modal-toBeUpdatedAnnounceModalWrapper"
+    );
+    const modeSelectModal = document.querySelector(
+      ".js-mode-select-modal-modeSelectModalWrapper"
+    );
+    const volumeControllerHotkeysModal = document.querySelector(
+      ".js-volume-controller-hotkeys-modal-volumeControllerHotkeysModalWrapper"
+    );
+    const retryAnnounceModal = document.querySelector(
+      ".js-retry-announce-modal-retryAnnounceModalWrapper"
+    );
 
-  btnMenu.addEventListener('click', () => {
-    openModal(continueRestartModal);
-  });
+    const closeModal = () => {
+      modalBase.close();
+    };
+    const openModal = (contentNode) => {
+      modalContentArea.innerHTML = "";
+      const clonedNode = contentNode.cloneNode(true);
+      clonedNode.style.display = "";
+      modalContentArea.appendChild(clonedNode);
+      if (
+        contentNode.classList.contains(
+          "js-volume-controller-hotkeys-modal-volumeControllerHotkeysModalWrapper"
+        )
+      ) {
+        volumeControl.init(clonedNode);
+      }
+      modalBase.showModal();
+    };
+    modalBase.addEventListener("close", () => {
+      modalContentArea.innerHTML = "";
+    });
 
-  btnConfirmClear.addEventListener('click', () => {
-    openModal(toBeUpdatedModal);
-  });
+    btnMenu.addEventListener("click", () => {
+      openModal(continueRestartModal);
+    });
 
-  btnModeSelect.addEventListener('click', () => {
-    openModal(modeSelectModal);
-  });
+    btnConfirmClear.addEventListener("click", () => {
+      openModal(toBeUpdatedModal);
+    });
 
-  modalCloseButton.addEventListener('click', closeModal);
-  
+    btnModeSelect.addEventListener("click", () => {
+      openModal(modeSelectModal);
+    });
+
+    btnSettings.addEventListener("click", () => {
+      openModal(volumeControllerHotkeysModal);
+    });
+
+    modalCloseButton.addEventListener("click", closeModal);
+  },
+};
+
+export default modalController;
