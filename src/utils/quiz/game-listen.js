@@ -10,8 +10,8 @@ import {
   handleGameMistake,
 } from "./quiz-common.js";
 import { speak } from "../tts-utils.js";
-import { mapKeyToNote } from "../input-utils.js";
-import { showClearModal } from "../modal-utils.js";
+// import { mapKeyToNote } from "../input-utils.js";
+// import { showClearModal } from "../modal-utils.js";
 
 // TODO: 구현 예정
 function mapKeyToNote(code) {
