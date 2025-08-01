@@ -123,7 +123,7 @@ export function initGameLife(max = 3) {
  */
 export function handleGameMistake(onFail) {
   life--;
-  speakText?.(`틀렸습니다. 남은 기회는 ${life}번입니다.`);
+  speak?.(`틀렸습니다. 남은 기회는 ${life}번입니다.`);
 
   if (life <= 0) {
     onFail?.(); // 퀴즈 리스너 제거 등
