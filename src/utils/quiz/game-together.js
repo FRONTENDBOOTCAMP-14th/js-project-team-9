@@ -11,8 +11,8 @@ import {
   generateRandomNotes,
 } from "./quiz-common.js";
 import { speak } from "../tts-utils.js";
+import { showClearModal } from "../modal-utils.js";
 // import { mapKeyToNote } from "../input-utils.js";
-// import { showClearModal } from "../modal-utils.js";
 
 // utils/input-utils.js
 

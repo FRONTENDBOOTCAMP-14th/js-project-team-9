@@ -9,8 +9,8 @@ import {
   handleGameMistake,
   generateRandomNotes,
 } from "./quiz-common.js";
+import { showClearModal } from "../modal-utils.js";
 // import { highlightKey } from "../visual-utils.js"; // 정답 건반 강조
-// import { showClearModal } from "../modal-utils.js";
 
 // TODO: 실제로 정답 건반을 강조하는 highlightKey 함수 구현 예정
 export function highlightKey(note) {

@@ -9,16 +9,12 @@ import {
   convertScaleToKorean,
 } from "./quiz-common.js";
 import { speak } from "../tts-utils.js";
+import { showClearModal } from "../modal-utils.js";
 
 // TODO: 키 → 노트 매핑
 function mapKeyToNote(code) {
   console.warn("mapKeyToNote는 아직 구현되지 않았습니다.");
   return "C4"; // 임시 테스트
-}
-
-// TODO: 정답 시 모달 표시
-function showClearModal() {
-  console.warn("showClearModal은 아직 구현되지 않았습니다.");
 }
 
 // 기준음을 기준으로 랜덤 정답 생성

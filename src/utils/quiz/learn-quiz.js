@@ -9,8 +9,8 @@ import {
   userInputs,
 } from "./quiz-common.js";
 import { speak } from "../tts-utils.js";
+import { showClearModal } from "../modal-utils.js";
 // import { mapKeyToNote } from "../input-utils.js";
-// import { showClearModal } from "../modal-utils.js";
 
 // TODO: 실제 구현되면 제거 예정 - 더미 함수로 임시 대체
 function mapKeyToNote(code) {

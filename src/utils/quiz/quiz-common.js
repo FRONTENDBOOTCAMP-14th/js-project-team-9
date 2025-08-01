@@ -1,5 +1,5 @@
 // utils/quiz/quiz-common.js
-
+import { showClearModal, showFailModal } from "../modal-utils.js";
 // 공통 상태
 export let currentHandler = null; // keydown 핸들러 중복 방지용
 export let userInputs = []; // 사용자 입력값 저장용 배열
@@ -143,32 +143,4 @@ export function handleGameMistake(onFail) {
   }
 
   return false; // 아직 실패 아님
-}
-
-// utils/modal-utils.js
-
-/**
- * 클리어 모달 열기
- * - HTML 구조에서 `.clear-modal` 클래스를 가진 요소가 있어야 합니다.
- */
-export function showClearModal() {
-  const modal = document.querySelector(".clear-modal");
-  if (!modal) {
-    console.warn("클리어 모달이 존재하지 않습니다.");
-    return;
-  }
-  modal.style.display = "block";
-}
-
-/**
- * 실패 모달 열기
- * - HTML 구조에서 `.fail-modal` 클래스를 가진 요소가 있어야 합니다.
- */
-export function showFailModal() {
-  const modal = document.querySelector(".fail-modal");
-  if (!modal) {
-    console.warn("실패 모달이 존재하지 않습니다.");
-    return;
-  }
-  modal.style.display = "block";
 }
