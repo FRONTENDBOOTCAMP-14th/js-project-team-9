@@ -3,11 +3,6 @@
 import { DEFAULT_MUSIC_SHEETS } from "./constants";
 import { loadUserMusicSheets } from "./storage-manager";
 
-const musicSheetSelectModal = document.querySelector(".music-sheet-modal");
-const musicSheetCardsContainer = musicSheetSelectModal.querySelector(
-  ".music-sheet-modal__cards"
-);
-
 // 악보 카드 생성해서 반환하기
 export function createMusicSheetCard(musicSheet) {
   const li = document.createElement("li");
@@ -50,6 +45,11 @@ export function createMusicSheetCard(musicSheet) {
 
 // 악보 목록 렌더링하기
 export function renderMusicSheetCards() {
+  const musicSheetSelectModal = document.querySelector(".music-sheet-modal");
+  const musicSheetCardsContainer = musicSheetSelectModal.querySelector(
+    ".music-sheet-modal__cards"
+  );
+
   // 악보 추가 버튼을 제외한 모든 악보 카드 제거
   const existingCards = musicSheetCardsContainer.querySelectorAll(
     ".music-sheet-modal__card:not(.card-add)"
