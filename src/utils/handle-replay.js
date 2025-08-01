@@ -1,6 +1,6 @@
 // handle-replay.js
 
-import { handleAutoAction } from "./handle-auto-action.js";
+import { handleAutoAction } from "./action-handler.js";
 
 /**
  * handleReplay()
