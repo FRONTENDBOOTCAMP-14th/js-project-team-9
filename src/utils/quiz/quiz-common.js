@@ -57,6 +57,7 @@ export function parseNote(note) {
   return match ? [match[1], match[2]] : [null, null];
 }
 
+// 기존 함수: 옥타브까지 붙임
 export function convertScaleToKorean(note) {
   const map = {
     C: "도",
@@ -73,15 +74,12 @@ export function convertScaleToKorean(note) {
     B: "시",
   };
 
-  const [scale, octave] = parseNote(note);
-  if (!scale || !map[scale]) return note;
-
-  return octave ? `${map[scale]}${octave}` : map[scale]; // 옥타브 포함 여부 유연하게 처리
+  const [scale] = parseNote(note);
+  return map[scale] || note;
 }
 
 /**
  * 오답일 경우 힌트 생성 (상대 거리 기반 텍스트)
- * 예: "왼쪽으로 2칸 이동하세요"
  */
 export function generateHint(input, answer, compareBy = "scaleName") {
   const [inputNote, inputOct] = parseNote(input);
@@ -111,12 +109,7 @@ export function generateHint(input, answer, compareBy = "scaleName") {
   const diff = answerIndex - inputIndex;
 
   const direction = diff === 0 ? "정답입니다!" : diff > 0 ? "오른쪽" : "왼쪽";
-  const distance = Math.abs(diff);
-
-  const koreanNote =
-    compareBy === "exact"
-      ? convertScaleToKorean(`${inputNote}${inputOct}`)
-      : convertScaleToKorean(inputNote); // 옥타브 제거!
+  const koreanNote = convertScaleToKorean(inputNote);
 
   return diff === 0
     ? "정답입니다!"
