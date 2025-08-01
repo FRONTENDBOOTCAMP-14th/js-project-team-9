@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="모두를 위한 피아노 우주, Pianiverse에서 자유롭게 연주해 봅시다!"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../public/assets/favicon/pianiverse.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../src/styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="../src/components/common/nav-buttons/nav-buttons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../src/components/common/music-sheet-select/music-sheet-select.css"
+    />
+    <link rel="stylesheet" href="./play.css" />
+    <script type="module" src="./play.js"></script>
+    <title>Pianiverse - 연주하기</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="sr-only">연주하기</h1>
+      <nav class="nav-list"></nav>
+    </header>
+    <main>
+      <div class="music-sheet__viewer"></div>
+      <div class="toggle-buttons"></div>
+      <div class="octave"></div>
+      <div class="piano"></div>
+    </main>
+  </body>
+</html>
