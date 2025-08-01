@@ -1,0 +1,10 @@
+.nav-list__container {
+  display: flex;
+  flex-flow: row nowrap;
+  line-height: 0;
+  gap: calc(var(--space-2) * 1.5);
+
+  .nav-list__element:last-child {
+    margin-inline-start: auto;
+  }
+}
