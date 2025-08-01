@@ -8,7 +8,7 @@ import {
   currentHandler,
   userInputs,
 } from "./quiz-common.js";
-import { speakText } from "../speak-utils.js";
+import { speak } from "../tts-utils.js";
 import { mapKeyToNote } from "../input-utils.js";
 import { showClearModal } from "../modal-utils.js";
 
@@ -20,7 +20,7 @@ export function startLearnQuiz(auto) {
   const {
     note: answer,
     count = 1,
-    speak,
+    speak: speakText,
     delayAfterText = 500,
     compareBy = "scaleName",
   } = auto;
@@ -31,7 +31,7 @@ export function startLearnQuiz(auto) {
   soundNote(answer);
 
   // 음성 안내
-  if (speak) speakText?.(speak);
+  if (speakText) speak(speakText);
 
   // 일정 시간 후 입력 시작
   setTimeout(() => {
@@ -51,11 +51,11 @@ export function startLearnQuiz(auto) {
 
       const isCorrect = compareNotes(userInputs[0], answer, compareBy);
       if (isCorrect) {
-        speakText?.("정답입니다!");
+        speak("정답입니다!");
         showClearModal();
       } else {
         const hint = generateHint(userInputs[0], answer);
-        speakText(hint);
+        speak(hint);
       }
     }
   }

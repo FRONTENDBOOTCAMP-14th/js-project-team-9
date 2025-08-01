@@ -9,7 +9,7 @@ import {
   initGameLife,
   handleGameMistake,
 } from "./quiz-common.js";
-import { speakText } from "../speak-utils.js";
+import { speak } from "../tts-utils.js";
 import { mapKeyToNote } from "../input-utils.js";
 import { showClearModal } from "../modal-utils.js";
 
@@ -83,7 +83,7 @@ export function startGameQuizTogether(auto, mode) {
     if (userInputs.length >= answerList.length) {
       document.removeEventListener("keydown", handleKeyInput);
       currentHandler = null;
-      speakText("정답입니다!");
+      speak("정답입니다!");
       showClearModal();
     }
   }

@@ -9,9 +9,19 @@ import {
   initGameLife,
   handleGameMistake,
 } from "./quiz-common.js";
-import { speakText } from "../speak-utils.js";
+import { speak } from "../tts-utils.js";
 import { mapKeyToNote } from "../input-utils.js";
 import { showClearModal } from "../modal-utils.js";
+
+// TODO: 구현 예정
+function mapKeyToNote(code) {
+  console.warn("mapKeyToNote는 아직 구현되지 않았습니다.");
+  return null;
+}
+
+function showClearModal() {
+  console.warn("showClearModal은 아직 구현되지 않았습니다.");
+}
 
 /**
  * 듣고 맞히기 게임 모드 실행
@@ -30,7 +40,7 @@ export function startGameListen(auto, mode) {
   resetQuizState();
   initGameLife();
 
-  speakText(guideBefore);
+  speak(guideBefore);
 
   document.addEventListener("keydown", handleFirstInput);
   currentHandler = handleFirstInput;
@@ -48,7 +58,7 @@ export function startGameListen(auto, mode) {
 
     document.removeEventListener("keydown", handleFirstInput);
 
-    speakText(`${guideAfter} 기준음은 ${inputNote}입니다.`);
+    speak(`${guideAfter} 기준음은 ${inputNote}입니다.`);
 
     // 정답 출력
     setTimeout(() => {
@@ -69,7 +79,7 @@ export function startGameListen(auto, mode) {
 
     const isCorrect = compareNotes(inputNote, answer, compareBy);
     if (isCorrect) {
-      speakText("정답입니다!");
+      speak("정답입니다!");
       showClearModal();
     } else {
       handleGameMistake(); // 실패 시 모달 + 상태 정리

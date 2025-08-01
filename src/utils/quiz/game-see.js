@@ -13,14 +13,13 @@ import { showClearModal } from "../modal-utils.js";
 
 /**
  * 보고 맞히기 게임 모드 실행
- * @param {object} auto - { answer, distractors, speak, compareBy }
+ * @param {object} auto - { answer, distractors, compareBy }
  * @param {string} mode - "see"
  */
 export function startGameSee(auto, mode) {
   const {
     answer,
     distractors = [], // 오답 리스트
-    speak,
     compareBy = "scaleName",
   } = auto;
 
