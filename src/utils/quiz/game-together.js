@@ -24,13 +24,6 @@ export function mapKeyToNote(code) {
   return "C4";
 }
 
-// utils/modal-utils.js
-
-// TODO: 클리어 모달 표시 로직 구현 필요
-export function showClearModal() {
-  console.warn("showClearModal() 호출됨 (아직 미구현)");
-}
-
 /**
  * 함께 맞히기 퀴즈 실행
  * @param {object} auto - auto 객체 (note, count, delayAfterText)

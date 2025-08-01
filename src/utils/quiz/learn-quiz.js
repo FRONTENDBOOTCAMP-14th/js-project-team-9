@@ -18,10 +18,6 @@ function mapKeyToNote(code) {
   return "C4"; // 임시 테스트용
 }
 
-function showClearModal() {
-  console.warn("showClearModal() 호출됨 (더미 함수)");
-}
-
 /**
  * 학습 모드 퀴즈 시작
  * @param {object} auto - 설명 데이터의 auto 항목
