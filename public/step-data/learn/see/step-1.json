@@ -1,0 +1,35 @@
+[
+  {
+    "text": "도를 배워요"
+  },
+  {
+    "text": "도는 음계의 시작이에요"
+  },
+  {
+    "text": "도의 위치를 찾아볼까요?"
+  },
+  {
+    "text": "붙어있는 검은 건반 두 개를 찾아보세요"
+  },
+  {
+    "text": "왼쪽 흰 건반이 도예요",
+    "auto": {
+      "action": "showNote",
+      "note": "C4",
+      "retry": true
+    }
+  },
+  {
+    "text": "이제 직접 연주해볼까요?"
+  },
+  {
+    "text": "<도>를 연주해보세요!",
+    "auto": {
+      "action": "quizNote",
+      "note": "C4",
+      "count": 1,
+      "compareBy": "scaleName",
+      "delayAfterText": 500
+    }
+  }
+]
