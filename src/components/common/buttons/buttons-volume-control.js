@@ -1,5 +1,5 @@
 // 볼륨 슬라이더 기능
-const volumeControl = {
+const btnVolumeControl = {
   init: function () {
     const sliderWrapper = document.querySelector(".js-volume-slider-wrapper");
     // 슬라이더 컴포넌트가 없으면 여기서 실행 중단
@@ -53,4 +53,4 @@ const volumeControl = {
     });
   },
 };
-export default volumeControl;
+export default btnVolumeControl;

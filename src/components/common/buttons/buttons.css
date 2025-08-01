@@ -24,6 +24,11 @@ a {
   margin-block-start: var(--space-1);
   font-size: var(--font-size-18);
   font-weight: var(--weight-800);
+  display: block;
+  align-content: center;
+  text-align: center;
+  line-height: 0.4;
+
   &.continue-restart-modal__btn-continue {
     background: url("../../../../public/assets/images/green_btn.svg") no-repeat;
   }

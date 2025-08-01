@@ -1,4 +1,4 @@
-const toggleControl = {
+const btnToggleControl = {
   // 초기화 함수
   init: function () {
     // 1. 토글 버튼 기능
@@ -12,4 +12,4 @@ const toggleControl = {
   },
 };
 
-export default toggleControl;
+export default btnToggleControl;
