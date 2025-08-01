@@ -28,16 +28,14 @@ export function showClearModal() {
  * @param {string} mode - "see"
  */
 export function startGameSee(auto, mode) {
-  const {
-    count,
-    distractors = [], // 오답 리스트
-    compareBy = "scaleName",
-  } = auto;
+  const { count, compareBy = "scaleName" } = auto;
 
   resetQuizState();
   initGameLife();
 
   const answerList = generateRandomNotes(count);
+  const answer = answerList[0];
+  const distractors = answerList.slice(1);
 
   // 정답 강조 + 음 재생
   highlightKey?.(answer);
@@ -79,20 +77,16 @@ function renderQuizButtons(answer, distractors, compareBy) {
 /**
  * 버튼 클릭 시 정답 판단
  */
-function handleAnswerClick(selected, answer, compareBy) {
+function handleAnswerClick(selected, answer, compareBy, buttonElement) {
   const isCorrect = compareNotes(selected, answer, compareBy);
   if (isCorrect) {
     showClearModal();
   } else {
-    if (selectedBtn) {
-      selectedBtn.classList.add("wrong");
-
-      // 0.5초 후 자동 제거
-      setTimeout(() => {
-        selectedBtn.classList.remove("wrong");
-      }, 500);
-    }
-    handleGameMistake(); // 실패 시 처리 포함
+    buttonElement.classList.add("wrong");
+    setTimeout(() => {
+      buttonElement.classList.remove("wrong");
+    }, 500);
+    handleGameMistake();
   }
 }
 
