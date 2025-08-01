@@ -1,7 +1,14 @@
 import { soundNote } from "./sound-utils.js";
-// highlightkey 공통 모듈 import 필요(highlightKey()라고 가정하고 작성)
-// soundNote와 highlightKey가 동시에 작동하는 playNote()도 import 필요(이름 변동 가능 o)
 import { runQuiz } from "./quiz/quiz-index.js";
+
+// TODO: 실제 구현 시 외부 모듈에서 import 예정
+function HighlightKey(note) {
+  console.warn(`HighlightKey("${note}") 호출됨 (더미 함수)`);
+}
+
+function playNote(note) {
+  console.warn(`playNote("${note}") 호출됨 (더미 함수)`);
+}
 
 export function handleAutoAction(auto, mode) {
   const { action, note } = auto;

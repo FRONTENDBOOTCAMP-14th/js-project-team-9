@@ -9,9 +9,26 @@ import {
   initGameLife,
   handleGameMistake,
 } from "./quiz-common.js";
-import { speakText } from "../speak-utils.js";
-import { mapKeyToNote } from "../input-utils.js";
-import { showClearModal } from "../modal-utils.js";
+import { speak } from "../tts-utils.js";
+// import { mapKeyToNote } from "../input-utils.js";
+// import { showClearModal } from "../modal-utils.js";
+
+// utils/input-utils.js
+
+// TODO: 키보드 키 → 음 이름 변환 로직 실제 구현 필요
+export function mapKeyToNote(code) {
+  console.warn(`mapKeyToNote('${code}') 호출됨 (아직 미구현)`);
+
+  // 예시: 테스트용으로 항상 "C4" 반환
+  return "C4";
+}
+
+// utils/modal-utils.js
+
+// TODO: 클리어 모달 표시 로직 구현 필요
+export function showClearModal() {
+  console.warn("showClearModal() 호출됨 (아직 미구현)");
+}
 
 /**
  * 랜덤 음 배열 생성 (예: C4~B4 중 랜덤으로 3개)
@@ -83,7 +100,7 @@ export function startGameQuizTogether(auto, mode) {
     if (userInputs.length >= answerList.length) {
       document.removeEventListener("keydown", handleKeyInput);
       currentHandler = null;
-      speakText("정답입니다!");
+      speak("정답입니다!");
       showClearModal();
     }
   }

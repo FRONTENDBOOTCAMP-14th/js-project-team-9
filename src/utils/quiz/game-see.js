@@ -8,19 +8,28 @@ import {
   initGameLife,
   handleGameMistake,
 } from "./quiz-common.js";
-import { highlightKey } from "../visual-utils.js"; // 정답 건반 강조
-import { showClearModal } from "../modal-utils.js";
+// import { highlightKey } from "../visual-utils.js"; // 정답 건반 강조
+// import { showClearModal } from "../modal-utils.js";
+
+// TODO: 실제로 정답 건반을 강조하는 highlightKey 함수 구현 예정
+export function highlightKey(note) {
+  console.warn(`highlightKey('${note}') 호출됨 (아직 미구현)`);
+}
+
+// TODO: 클리어 모달 열기 기능 구현 예정
+export function showClearModal() {
+  console.warn("showClearModal() 호출됨 (아직 미구현)");
+}
 
 /**
  * 보고 맞히기 게임 모드 실행
- * @param {object} auto - { answer, distractors, speak, compareBy }
+ * @param {object} auto - { answer, distractors, compareBy }
  * @param {string} mode - "see"
  */
 export function startGameSee(auto, mode) {
   const {
     answer,
     distractors = [], // 오답 리스트
-    speak,
     compareBy = "scaleName",
   } = auto;
 
