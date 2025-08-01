@@ -34,7 +34,7 @@
   padding: var(--space-3);
 }
 
-.explain-box__text {
+.explain-box__content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,6 +54,13 @@
 
   white-space: pre-line;
   word-break: keep-all;
+}
+
+.quiz-button-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: var(--space-3);
 }
 
 .explain-box__image {
