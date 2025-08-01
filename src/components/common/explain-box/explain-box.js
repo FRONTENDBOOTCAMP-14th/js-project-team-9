@@ -1,9 +1,5 @@
 import { setupNavigation } from "../../../utils/navigation-controller.js";
-// 아직 모듈이 없기 때문에, 임시 더미 함수로 테스트
-
-function handleReplay(item) {
-  console.warn(" handleReplay: 아직 구현되지 않았습니다.", item);
-}
+import { handleReplay } from "../../../utils/handle-replay.js";
 
 export function initExplainBox({ explanations, onSpeak, mode }) {
   let index = 0;
