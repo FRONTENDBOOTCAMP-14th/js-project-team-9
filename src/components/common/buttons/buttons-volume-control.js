@@ -1,16 +1,6 @@
-const toggleAndvolumeControl = {
-  // 초기화 함수
+// 볼륨 슬라이더 기능
+const btnVolumeControl = {
   init: function () {
-    // 1. 토글 버튼 기능
-    const toggleBtn = document.querySelector(".btn-toggle");
-    if (toggleBtn) {
-      toggleBtn.addEventListener("click", () => {
-        const isPressed = toggleBtn.getAttribute("aria-pressed") === "true";
-        toggleBtn.setAttribute("aria-pressed", !isPressed);
-      });
-    }
-
-    // 2. 볼륨 슬라이더 기능
     const sliderWrapper = document.querySelector(".js-volume-slider-wrapper");
     // 슬라이더 컴포넌트가 없으면 여기서 실행 중단
     if (!sliderWrapper) {
@@ -63,5 +53,4 @@ const toggleAndvolumeControl = {
     });
   },
 };
-
-export default toggleAndvolumeControl;
+export default btnVolumeControl;
