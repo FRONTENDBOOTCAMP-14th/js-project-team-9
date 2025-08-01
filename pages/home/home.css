@@ -1,4 +1,4 @@
-@import url(../src/components/common/buttons/buttons.css);
+@import url(../../src/components/common/buttons/buttons.css);
 
 body {
   background: linear-gradient(
@@ -69,15 +69,15 @@ header {
     }
 
     &:nth-of-type(2) > .btn-square {
-      background: url("../public/assets/images/sky_btn.svg") no-repeat;
+      background: url("../../public/assets/images/sky_btn.svg") no-repeat;
     }
 
     &:nth-of-type(3) > .btn-square {
-      background: url("../public/assets/images/pink_btn.svg") no-repeat;
+      background: url("../../public/assets/images/pink_btn.svg") no-repeat;
     }
 
     &:nth-of-type(4) > .btn-square {
-      background: url("../public/assets/images/purple_btn.svg") no-repeat;
+      background: url("../../public/assets/images/purple_btn.svg") no-repeat;
     }
   }
 }
