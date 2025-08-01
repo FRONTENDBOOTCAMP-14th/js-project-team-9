@@ -56,6 +56,13 @@
   word-break: keep-all;
 }
 
+.quiz-button-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
 .explain-box__image {
   position: absolute;
   inset-inline-start: var(--ex-img-inline-start);

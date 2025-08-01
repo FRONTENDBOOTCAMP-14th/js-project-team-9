@@ -66,7 +66,7 @@ function renderQuizButtons(answer, distractors, compareBy) {
   shuffled.forEach((note) => {
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "quiz-option__button";
+    btn.className = "quiz-option__button, btn-square";
     btn.textContent = convertScaleToKorean(note);
     btn.onclick = () => handleAnswerClick(note, answer, compareBy);
     container.appendChild(btn);

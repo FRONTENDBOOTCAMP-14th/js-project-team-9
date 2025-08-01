@@ -52,7 +52,7 @@ export function startGameListen(auto, mode) {
     const [scale] = inputNote.split(/(\d)/); // C4 → C
 
     if (!allowedNotes.includes(scale)) {
-      speakText(`"${scale}"은 사용할 수 없습니다. 다시 눌러주세요.`);
+      speak(`"${scale}"은 사용할 수 없습니다. 다시 눌러주세요.`);
       return;
     }
 

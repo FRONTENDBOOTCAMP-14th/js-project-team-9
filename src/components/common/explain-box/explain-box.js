@@ -8,7 +8,7 @@ function handleReplay(item) {
 export function initExplainBox({ explanations, onSpeak, mode }) {
   let index = 0;
 
-  const textBox = document.querySelector(".explain-box__text");
+  const textBox = document.querySelector(".explain-box__content");
   const btnPrev = document.querySelector(".js-explain-box-btnPrev");
   const btnNext = document.querySelector(".js-explain-box-btnNext");
   // btnRetry 클래스 이름 변경될 수 있음
