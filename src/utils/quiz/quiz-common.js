@@ -19,6 +19,24 @@ export function resetQuizState() {
 }
 
 /**
+ * 지정된 풀에서 랜덤 음 n개를 생성
+ * @param {number} count - 몇 개 생성할지
+ * @param {string[]} pool - 선택 가능한 음 목록 (기본: 1옥타브 C~B)
+ * @returns {string[]} 랜덤 음 배열
+ */
+export function generateRandomNotes(
+  count = 1,
+  pool = ["C4", "D4", "E4", "F4", "G4", "A4", "B4"]
+) {
+  const notes = [];
+  for (let i = 0; i < count; i++) {
+    const random = pool[Math.floor(Math.random() * pool.length)];
+    notes.push(random);
+  }
+  return notes;
+}
+
+/**
  * 입력값과 정답 비교
  * 기본값은 scaleName 기준(계이름만 비교), "exact"는 옥타브까지 포함
  */

@@ -8,6 +8,7 @@ import {
   userInputs,
   initGameLife,
   handleGameMistake,
+  generateRandomNotes,
 } from "./quiz-common.js";
 import { speak } from "../tts-utils.js";
 // import { mapKeyToNote } from "../input-utils.js";
@@ -31,30 +32,12 @@ export function showClearModal() {
 }
 
 /**
- * 랜덤 음 배열 생성 (예: C4~B4 중 랜덤으로 3개)
- */
-function generateRandomNotes(count = 3) {
-  const pool = ["C4", "D4", "E4", "F4", "G4", "A4", "B4"];
-  const notes = [];
-  for (let i = 0; i < count; i++) {
-    const random = pool[Math.floor(Math.random() * pool.length)];
-    notes.push(random);
-  }
-  return notes;
-}
-
-/**
  * 함께 맞히기 퀴즈 실행
  * @param {object} auto - auto 객체 (note, count, delayAfterText)
  * @param {string} mode - "together"
  */
 export function startGameQuizTogether(auto, mode) {
-  const {
-    count = 3,
-    note,
-    delayAfterText = 500,
-    compareBy = "scaleName",
-  } = auto;
+  const { count = 3, delayAfterText = 500, compareBy = "scaleName" } = auto;
 
   resetQuizState();
   initGameLife(); // 목숨 초기화

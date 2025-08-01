@@ -7,6 +7,7 @@ import {
   currentHandler,
   initGameLife,
   handleGameMistake,
+  generateRandomNotes,
 } from "./quiz-common.js";
 // import { highlightKey } from "../visual-utils.js"; // 정답 건반 강조
 // import { showClearModal } from "../modal-utils.js";
@@ -28,13 +29,15 @@ export function showClearModal() {
  */
 export function startGameSee(auto, mode) {
   const {
-    answer,
+    count,
     distractors = [], // 오답 리스트
     compareBy = "scaleName",
   } = auto;
 
   resetQuizState();
   initGameLife();
+
+  const answerList = generateRandomNotes(count);
 
   // 정답 강조 + 음 재생
   highlightKey?.(answer);
