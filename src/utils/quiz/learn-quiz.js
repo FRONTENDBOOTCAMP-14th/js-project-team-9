@@ -64,7 +64,7 @@ export function startLearnQuiz(auto) {
         speak("정답입니다!");
         showClearModal();
       } else {
-        const hint = generateHint(userInputs[0], answer);
+        const hint = generateHint(userInputs[0], answer, compareBy);
         speak(hint);
       }
     }

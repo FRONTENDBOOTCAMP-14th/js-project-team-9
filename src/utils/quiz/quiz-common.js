@@ -65,7 +65,7 @@ export function convertScaleToKorean(note) {
  * 오답일 경우 힌트 생성 (상대 거리 기반 텍스트)
  * 예: "왼쪽으로 2칸 이동하세요"
  */
-export function generateHint(input, answer) {
+export function generateHint(input, answer, compareBy = "scaleName") {
   const [inputNote, inputOct] = parseNote(input);
   const [answerNote, answerOct] = parseNote(answer);
 
@@ -102,7 +102,7 @@ export function generateHint(input, answer) {
 
   return diff === 0
     ? "정답입니다!"
-    : `방금 누른 건반은 ${koreanNote}입니다. ${direction}으로 ${distance}칸 이동하세요.`;
+    : `방금 누른 건반은 ${koreanNote}입니다. 정답은 ${koreanNote}보다 ${direction}에 있어요.`;
 }
 
 // 현재 목숨 수
