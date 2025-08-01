@@ -1,14 +1,10 @@
 import { setupNavigation } from "../../../utils/navigation-controller.js";
-// 아직 모듈이 없기 때문에, 임시 더미 함수로 테스트
-
-function handleReplay(item) {
-  console.warn(" handleReplay: 아직 구현되지 않았습니다.", item);
-}
+import { handleReplay } from "../../../utils/handle-replay.js";
 
 export function initExplainBox({ explanations, onSpeak, mode }) {
   let index = 0;
 
-  const textBox = document.querySelector(".explain-box__text");
+  const textBox = document.querySelector(".explain-box__content");
   const btnPrev = document.querySelector(".js-explain-box-btnPrev");
   const btnNext = document.querySelector(".js-explain-box-btnNext");
   // btnRetry 클래스 이름 변경될 수 있음
