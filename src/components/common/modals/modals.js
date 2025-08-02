@@ -15,9 +15,9 @@
 5. .js-modal-base-btnClose을 누르면 모달창이 닫힘.
 */
 
-import volumeControl from "../buttons/buttons-volume-control";
+import btnVolumeControl from "../buttons/buttons-volume-control";
 const modalController = {
-  volumeControl: volumeControl,
+  volumeControl: btnVolumeControl,
   init: function () {
     // 모달 베이스 변수 선언
     const modalBase = document.querySelector(".js-modal-base-modalBase");
@@ -47,9 +47,6 @@ const modalController = {
     const volumeControllerHotkeysModal = document.querySelector(
       ".js-volume-controller-hotkeys-modal-volumeControllerHotkeysModalWrapper"
     );
-    const retryAnnounceModal = document.querySelector(
-      ".js-retry-announce-modal-retryAnnounceModalWrapper"
-    );
 
     const closeModal = () => {
       modalBase.close();
@@ -61,10 +58,34 @@ const modalController = {
       modalContentArea.appendChild(clonedNode);
       if (
         contentNode.classList.contains(
+          "js-mode-select-modal-modeSelectModalWrapper"
+        )
+      ) {
+        const modeForm = clonedNode.querySelector(".mode-select-modal__form");
+
+        modeForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const selectedRadio = modeForm.querySelector(
+            'input[name="mode"]:checked'
+          );
+
+          if (selectedRadio) {
+            localStorage.setItem("mode", selectedRadio.value);
+            console.log(`'${selectedRadio.value}' 모드가 저장되었습니다.`); // 확인용 로그
+
+            window.location.href = "step.html?step=1";
+          } else {
+            alert("모드를 선택해주세요!");
+          }
+        });
+      }
+      if (
+        contentNode.classList.contains(
           "js-volume-controller-hotkeys-modal-volumeControllerHotkeysModalWrapper"
         )
       ) {
-        volumeControl.init(clonedNode);
+        btnVolumeControl.init(clonedNode);
       }
       modalBase.showModal();
     };
