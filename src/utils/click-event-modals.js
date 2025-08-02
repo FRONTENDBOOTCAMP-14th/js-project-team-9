@@ -20,7 +20,7 @@ import btnVolumeControl from "./buttons-volume-control.js";
 
 const modalController = {
   volumeControl: btnVolumeControl,
-  init: async function () {
+  startModalSystem: async function () {
     // HTML 파일을 불러와서 body에 추가하기
     const response = await fetch("/components/click-event-modals.html");
     const modalHTML = await response.text();

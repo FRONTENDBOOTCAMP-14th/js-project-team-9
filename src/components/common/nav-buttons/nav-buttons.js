@@ -3,6 +3,6 @@ import modalController from "../../../../src/utils/click-event-modals.js";
 
 async function initializeApp() {
   await renderNavList();
-  modalController.init();
+  modalController.startModalSystem();
 }
 initializeApp();
