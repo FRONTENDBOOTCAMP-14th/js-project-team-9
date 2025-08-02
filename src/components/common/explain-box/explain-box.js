@@ -16,7 +16,7 @@ export function initExplainBox({ explanations, onSpeak, mode }) {
     return;
   }
 
-  // 스페이스바를 btnRetry 단축키로 사용하기
+  // 1을 btnRetry 단축키로 사용하기
   document.addEventListener("keydown", (e) => {
     const isRetryVisible = !btnRetry.hidden;
     const isExplainVisible = textBox.offsetParent !== null;
