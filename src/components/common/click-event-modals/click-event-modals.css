@@ -1,4 +1,7 @@
 /* 모달창 공통 스타일 */
+body {
+  padding: 100px;
+}
 
 .modal-base {
   position: relative;
@@ -20,25 +23,16 @@
   right: 0;
   transform: translate(50%, -50%);
 }
-
+/* 클리어모달 */
 .step-page__clear-modal {
-  /* [유지] 그리드 레이아웃은 그대로 사용 */
   display: grid;
-  justify-items: center; /* 자식들을 가로 중앙 정렬 */
-  align-content: center; /* 자식들을 세로 중앙 정렬 */
-  gap: 1rem;
+  justify-items: center;
+  align-content: center;
+  gap: 0.2rem;
   text-align: center;
-
-  /* [추가] absolute 자식의 기준점이 되도록 설정 */
   position: relative;
-
-  /* [수정] 헤더가 차지할 공간(50px) + 추가 여백(1rem)만큼 상단 패딩을 줌 */
-  padding: calc(50px + 1rem) 1rem 1rem 1rem;
-
-  /* [수정] 고정 height는 삭제! 내용에 따라 높이가 유연하게 변해야 함 */
+  padding: calc(30px + 1rem) 1rem 1rem 1rem;
   width: 13.9375rem;
-
-  /* --- 나머지 스타일은 그대로 --- */
   color: var(--purple-500);
   font-weight: var(--weight-bold);
   background: var(--white);
@@ -47,45 +41,100 @@
   box-shadow: 0 var(--shadow-4) 0 0 var(--gray-500);
 }
 
-/* 새로 만든 헤더 그룹: 포스트잇(absolute) 역할 */
 .step-page-clear-modal__header-wrapper {
-  /* [추가] 공중에 띄워서 위치를 자유롭게 설정 */
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -50%); /* 마법의 중앙-상단 걸치기 */
-
-  /* 이 그룹 자체도 grid로 만들어서 내부 이미지/텍스트 겹치기 */
+  transform: translate(-50%, -70%);
   display: grid;
   place-items: center;
 }
 
-/* 헤더 이미지 */
 .step-page-clear-modal__header-image {
-  /* [유지] 그리드의 같은 칸에 배치해서 겹치기 */
   grid-area: 1 / 1;
-  z-index: 1; /* 뒤에 배치 */
+  z-index: 1;
   background: url("../../../../public/assets/images/header_complete.svg")
     no-repeat center / contain;
-  width: 250px; /* 모달 너비보다 약간 크게 조절 */
-  height: 100px; /* 원하는 높이로 조절 */
+  width: 250px;
+  height: 100px;
 }
 
-/* 헤더 텍스트 (h2) */
 .step-page-clear-modal__header {
   grid-area: 1 / 1;
-  z-index: 2; /* 앞에 배치 */
+  z-index: 2;
   align-self: center;
-  font-size: var(--font-size-20);
-  /* 여기에 3D 텍스트 효과(text-shadow) 등을 추가하면 됨 */
-  text-shadow: var(--shadow-2);
+  font-size: var(--font-size-18);
+  color: var(--white);
+  text-shadow: var(--shadow-2) var(--shadow-2) 0 var(--purple-700);
+  transform: translateY(16px);
 }
 
-/* p 태그와 버튼은 grid가 알아서 배치해주니 특별히 건들 필요 없음 */
+.step-page-clear-modal__level-complete-announce {
+  font-size: var(--font-size-20);
+  font-weight: var(--weight-800);
+}
+
 .step-page-clear-modal__buttons-wrapper {
   display: flex;
   gap: 1rem;
 }
+
+/* 실패 모달 */
+.step-page__failed-modal {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 0.2rem;
+  text-align: center;
+  position: relative;
+  padding: calc(30px + 1rem) 1rem 1rem 1rem;
+  width: 13.9375rem;
+  color: var(--purple-500);
+  font-weight: var(--weight-bold);
+  background: var(--white);
+  border: var(--border-3) solid var(--blue-100);
+  border-radius: var(--radius-24);
+  box-shadow: 0 var(--shadow-4) 0 0 var(--gray-500);
+}
+
+.step-page-failed-modal__header-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  display: grid;
+  place-items: center;
+}
+
+.step-page-failed-modal__header-image {
+  grid-area: 1 / 1;
+  z-index: 1;
+  background: url("../../../../public/assets/images/header_failed.svg")
+    no-repeat center / contain;
+  width: 250px;
+  height: 100px;
+}
+
+.step-page-failed-modal__header {
+  grid-area: 1 / 1;
+  z-index: 2;
+  align-self: center;
+  font-size: var(--font-size-18);
+  color: var(--white);
+  text-shadow: var(--shadow-2) var(--shadow-2) 0 var(--purple-700);
+  transform: translateY(16px);
+}
+
+.step-page-failed-modal__level-complete-announce {
+  font-size: var(--font-size-20);
+  font-weight: var(--weight-800);
+}
+
+.step-page-failed-modal__buttons-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
 /* 내부컴포넌트들 */
 
 /* 모드선택모달 */
