@@ -6,12 +6,9 @@ const musicSheetViewer = document.querySelector(".music-sheet__viewer");
 
 renderHTML("../../src/components/common/nav-buttons/nav-buttons.html", navList)
   .then(() => {
-    return import(
-      "../../src/components/common/nav-buttons/nav-list-renderer.js"
-    );
+    return import("../../src/components/common/nav-buttons/nav-buttons.js");
   })
-  .then((navButtonsModule) => {
-    navButtonsModule.renderNavList();
+  .then(() => {
     return renderHTML(
       "../../src/components/common/music-sheet-select/music-sheet-select.html",
       musicSheetViewer
@@ -37,14 +34,6 @@ renderHTML("../../src/components/common/nav-buttons/nav-buttons.html", navList)
   .catch((error) => {
     console.error("HTML 파일을 불러오는 중 오류 발생:", error);
   });
-
-// renderHTML(
-//   "../src/components/common/music-sheet-select/music-sheet-select.html",
-//   musicSheetViewer
-// );
-// renderHTML('../src/components/common/*/*.html', toggleButtons)
-// renderHTML('../src/components/common/*/*.html', octave)
-// renderHTML('../src/components/common/*/*.html', piano)
 
 function renderHTML(url, element) {
   return fetch(url)
