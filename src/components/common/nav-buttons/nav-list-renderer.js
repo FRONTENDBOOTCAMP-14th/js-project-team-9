@@ -7,7 +7,7 @@ export function renderNavList() {
     ".btn-help",
   ];
 
-  fetch("/../src/components/common/buttons/buttons.html")
+  fetch("/components/buttons/buttons.html")
     .then((response) => response.text())
     .then((htmlText) => {
       const parser = new DOMParser();
