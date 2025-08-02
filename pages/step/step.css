@@ -1,0 +1,41 @@
+@import url(../../src/components/common/nav-buttons/nav-buttons.css);
+
+:root {
+  --life-inset-block-start: 2.125rem;
+  --nav-inset-block-start: 1.5rem;
+  --explain-inset-block-start: 7.0625rem;
+  --center-inline: 50%;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, #9c59fe 0%, #6f53fd 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.step-wrapper {
+  position: relative;
+  inset-block-start: var(--nav-inset-block-start);
+  padding-inline: var(--space-4);
+}
+
+.life-wrapper {
+  position: absolute;
+  inset-block-start: var(--life-inset-block-start);
+  inset-inline-start: var(--center-inline);
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.explain-box-wrapper {
+  position: absolute;
+  inset-block-start: var(--explain-inset-block-start);
+  inset-inline-start: var(--center-inline);
+  transform: translateX(-50%);
+  z-index: 5;
+  width: 90%;
+  max-width: 600px;
+}
