@@ -1,0 +1,24 @@
+[
+  {
+    "text": "1단계"
+  },
+  {
+    "text": "피아노에 어떤 음이 연주되는지 보고 맞혀보세요"
+  },
+  {
+    "text": "건반이 연주되면 다른 색으로 변해요"
+  },
+  {
+    "text": "목숨은 총 3개입니다"
+  },
+  {
+    "text": "건반을 잘 보고 같은 음을 연주하세요",
+    "auto": {
+      "action": "quizNote",
+      "generated": true,
+      "count": 1,
+      "compareBy": "scaleName",
+      "delayAfterText": 700
+    }
+  }
+]
