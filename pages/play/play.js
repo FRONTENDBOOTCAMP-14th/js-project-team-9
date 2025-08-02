@@ -4,20 +4,22 @@ const musicSheetViewer = document.querySelector(".music-sheet__viewer");
 // const octave = document.querySelector(".octave");
 // const piano = document.querySelector(".piano");
 
-renderHTML("../src/components/common/nav-buttons/nav-buttons.html", navList)
+renderHTML("../../src/components/common/nav-buttons/nav-buttons.html", navList)
   .then(() => {
-    return import("../src/components/common/nav-buttons/nav-list-renderer.js");
+    return import(
+      "../../src/components/common/nav-buttons/nav-list-renderer.js"
+    );
   })
   .then((navButtonsModule) => {
     navButtonsModule.renderNavList();
     return renderHTML(
-      "../src/components/common/music-sheet-select/music-sheet-select.html",
+      "../../src/components/common/music-sheet-select/music-sheet-select.html",
       musicSheetViewer
     );
   })
   .then(() => {
     return import(
-      "../src/components/common/music-sheet-select/card-rederer.js"
+      "../../src/components/common/music-sheet-select/card-rederer.js"
     );
   })
   .then((musicSheetCardRendererModule) => {
@@ -25,7 +27,7 @@ renderHTML("../src/components/common/nav-buttons/nav-buttons.html", navList)
   })
   .then(() => {
     return import(
-      "../src/components/common/music-sheet-select/event-handlers.js"
+      "../../src/components/common/music-sheet-select/event-handlers.js"
     );
   })
   .then((musicSheetEventHandlersModule) => {
