@@ -24,7 +24,7 @@ const toggleAndvolumeControl = {
       ".btn-volume-slider__volume-slider-fill"
     );
     const focusableSlider = sliderWrapper.querySelector(
-      ".js-btn-volume-slider-volumeSliderBar"
+      ".js-btn-volume-slider"
     );
 
     function updateVolumeUI(percent) {
@@ -51,12 +51,12 @@ const toggleAndvolumeControl = {
       const currentPercent = parseFloat(fill.style.width) || 0;
       const step = 5;
 
-      if (event.key === "ArrowRight" || event.key === "ArrowUp") {
+      if (event.key === "ArrowRight") {
         event.preventDefault();
         updateVolumeUI(currentPercent + step);
       }
 
-      if (event.key === "ArrowLeft" || event.key === "ArrowDown") {
+      if (event.key === "ArrowLeft") {
         event.preventDefault();
         updateVolumeUI(currentPercent - step);
       }
@@ -64,4 +64,5 @@ const toggleAndvolumeControl = {
   },
 };
 
+// volumeControl 객체를 이 파일의 기본값으로 내보내기
 export default toggleAndvolumeControl;
