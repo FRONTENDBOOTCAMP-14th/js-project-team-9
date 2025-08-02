@@ -1,8 +1,4 @@
 /* 모달창 공통 스타일 */
-body {
-  padding: 100px;
-}
-
 .modal-base {
   position: relative;
   color: var(--purple-500);
@@ -190,6 +186,7 @@ body {
 
   input:focus-visible {
     outline: var(--border-base) solid var(--black);
+    box-shadow: 0 0 0 2px var(--black);
   }
 }
 /* 그 외 단순 팝업 컨텐츠들 */
