@@ -1,5 +1,5 @@
 // utils/quiz/quiz-common.js
-
+import { showClearModal, showFailModal } from "../modal-utils.js";
 // 공통 상태
 export let currentHandler = null; // keydown 핸들러 중복 방지용
 export let userInputs = []; // 사용자 입력값 저장용 배열
@@ -16,6 +16,24 @@ export function resetQuizState() {
     document.removeEventListener("keydown", currentHandler);
     currentHandler = null;
   }
+}
+
+/**
+ * 지정된 풀에서 랜덤 음 n개를 생성
+ * @param {number} count - 몇 개 생성할지
+ * @param {string[]} pool - 선택 가능한 음 목록 (기본: 1옥타브 C~B)
+ * @returns {string[]} 랜덤 음 배열
+ */
+export function generateRandomNotes(
+  count = 1,
+  pool = ["C4", "D4", "E4", "F4", "G4", "A4", "B4"]
+) {
+  const notes = [];
+  for (let i = 0; i < count; i++) {
+    const random = pool[Math.floor(Math.random() * pool.length)];
+    notes.push(random);
+  }
+  return notes;
 }
 
 /**
@@ -39,6 +57,7 @@ export function parseNote(note) {
   return match ? [match[1], match[2]] : [null, null];
 }
 
+// 기존 함수: 옥타브까지 붙임
 export function convertScaleToKorean(note) {
   const map = {
     C: "도",
@@ -55,17 +74,14 @@ export function convertScaleToKorean(note) {
     B: "시",
   };
 
-  const [scale, octave] = parseNote(note);
-  if (!scale || !map[scale]) return note;
-
-  return octave ? `${map[scale]}${octave}` : map[scale]; // 옥타브 포함 여부 유연하게 처리
+  const [scale] = parseNote(note);
+  return map[scale] || note;
 }
 
 /**
  * 오답일 경우 힌트 생성 (상대 거리 기반 텍스트)
- * 예: "왼쪽으로 2칸 이동하세요"
  */
-export function generateHint(input, answer) {
+export function generateHint(input, answer, compareBy = "scaleName") {
   const [inputNote, inputOct] = parseNote(input);
   const [answerNote, answerOct] = parseNote(answer);
 
@@ -93,16 +109,11 @@ export function generateHint(input, answer) {
   const diff = answerIndex - inputIndex;
 
   const direction = diff === 0 ? "정답입니다!" : diff > 0 ? "오른쪽" : "왼쪽";
-  const distance = Math.abs(diff);
-
-  const koreanNote =
-    compareBy === "exact"
-      ? convertScaleToKorean(`${inputNote}${inputOct}`)
-      : convertScaleToKorean(inputNote); // 옥타브 제거!
+  const koreanNote = convertScaleToKorean(inputNote);
 
   return diff === 0
     ? "정답입니다!"
-    : `방금 누른 건반은 ${koreanNote}입니다. ${direction}으로 ${distance}칸 이동하세요.`;
+    : `방금 누른 건반은 ${koreanNote}입니다. 정답은 ${koreanNote}보다 ${direction}에 있어요.`;
 }
 
 // 현재 목숨 수
@@ -132,32 +143,4 @@ export function handleGameMistake(onFail) {
   }
 
   return false; // 아직 실패 아님
-}
-
-// utils/modal-utils.js
-
-/**
- * 클리어 모달 열기
- * - HTML 구조에서 `.clear-modal` 클래스를 가진 요소가 있어야 합니다.
- */
-export function showClearModal() {
-  const modal = document.querySelector(".clear-modal");
-  if (!modal) {
-    console.warn("클리어 모달이 존재하지 않습니다.");
-    return;
-  }
-  modal.style.display = "block";
-}
-
-/**
- * 실패 모달 열기
- * - HTML 구조에서 `.fail-modal` 클래스를 가진 요소가 있어야 합니다.
- */
-export function showFailModal() {
-  const modal = document.querySelector(".fail-modal");
-  if (!modal) {
-    console.warn("실패 모달이 존재하지 않습니다.");
-    return;
-  }
-  modal.style.display = "block";
 }
