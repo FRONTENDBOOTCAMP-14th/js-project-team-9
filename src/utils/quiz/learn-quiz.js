@@ -7,43 +7,42 @@ import {
   generateHint,
   currentHandler,
   userInputs,
+  setCurrentHandler,
 } from "./quiz-common.js";
-import { speak } from "../tts-utils.js";
+import { speak, speakAndWait } from "../tts-utils.js";
 import { showClearModal } from "../modal-utils.js";
-// import { mapKeyToNote } from "../input-utils.js";
-
-// TODO: 실제 구현되면 제거 예정 - 더미 함수로 임시 대체
-function mapKeyToNote(code) {
-  console.warn(`mapKeyToNote("${code}") 호출됨 (더미 함수)`);
-  return "C4"; // 임시 테스트용
-}
+import { mapKeyToNote } from "../input-utils.js";
 
 /**
  * 학습 모드 퀴즈 시작
  * @param {object} auto - 설명 데이터의 auto 항목
  */
-export function startLearnQuiz(auto) {
+export async function startLearnQuiz(auto) {
   const {
     note: answer,
     count = 1,
     speak: speakText,
-    delayAfterText = 500,
+    delayAfterText = true,
     compareBy = "scaleName",
   } = auto;
 
   resetQuizState();
 
+  // 안내 음성
+  if (speakText) {
+    if (delayAfterText === true) {
+      await speakAndWait(speakText);
+    } else {
+      speak(speakText);
+    }
+  }
+
   // 정답음 출력
   soundNote(answer);
 
-  // 음성 안내
-  if (speakText) speak(speakText);
-
-  // 일정 시간 후 입력 시작
-  setTimeout(() => {
-    document.addEventListener("keydown", handleKeyInput);
-    currentHandler = handleKeyInput;
-  }, delayAfterText);
+  // 안내 후 키 입력 받기 시작
+  document.addEventListener("keydown", handleKeyInput);
+  setCurrentHandler(handleKeyInput);
 
   function handleKeyInput(e) {
     const inputNote = mapKeyToNote?.(e.code);
@@ -52,15 +51,20 @@ export function startLearnQuiz(auto) {
     userInputs.push(inputNote);
 
     if (userInputs.length >= count) {
-      document.removeEventListener("keydown", handleKeyInput);
-      currentHandler = null;
-
       const isCorrect = compareNotes(userInputs[0], answer, compareBy);
+
       if (isCorrect) {
+        document.removeEventListener("keydown", handleKeyInput);
+        setCurrentHandler(null);
+
         speak("정답입니다!");
         showClearModal();
       } else {
-        const hint = generateHint(userInputs[0], answer, compareBy);
+        const wrong = userInputs[0];
+        userInputs.length = 0; // 입력 초기화
+        const hint = generateHint(wrong, answer, compareBy);
+        const textBox = document.querySelector(".explain-box__content");
+        if (textBox) textBox.textContent = hint;
         speak(hint);
       }
     }

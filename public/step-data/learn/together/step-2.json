@@ -20,7 +20,8 @@
     "speak": "도 건반 바로 오른쪽에 있는 흰 건반이 레예요",
     "auto": {
       "action": "showNote",
-      "note": "D4"
+      "note": "D4",
+      "delayAfterText": true
     }
   },
   {
@@ -28,7 +29,8 @@
     "speak": "이제 레 소리를 들어봐요",
     "auto": {
       "action": "playNote",
-      "note": "D4"
+      "note": "D4",
+      "delayAfterText": true
     }
   },
   {
@@ -37,13 +39,13 @@
   },
   {
     "text": "<레>를 연주해보세요!",
-    "speak": "도를 연주해보세요",
+    "speak": "레를 연주해보세요",
     "auto": {
       "action": "quizNote",
       "note": "D4",
       "count": 1,
       "compareBy": "scaleName",
-      "delayAfterText": 500
+      "delayAfterText": true
     }
   }
 ]
