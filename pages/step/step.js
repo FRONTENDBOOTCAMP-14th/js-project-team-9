@@ -27,6 +27,11 @@ import { getStoredStageInfo } from "../../src/utils/stage-utils.js";
   const explainHtml = await explainRes.text();
   document.querySelector(".explain-box-wrapper").innerHTML = explainHtml;
 
+  // 키보드 UI 삽입
+  const pianoRes = await fetch("/components/keyboard.html");
+  const pianoHtml = await pianoRes.text();
+  document.querySelector(".piano-wrapper").innerHTML = pianoHtml;
+
   // 설명 데이터 로딩
   const explanations = await loadExplanations({ type, mode, step });
 
