@@ -43,7 +43,7 @@ header {
     }
 
     &:nth-child(3) {
-      background-image: url("../../public/assets/images/memoji-hyungmin.jpg");
+      background-image: url("../../public/assets/images/memoji-hyungmin.png");
     }
 
     &:nth-child(4) {
