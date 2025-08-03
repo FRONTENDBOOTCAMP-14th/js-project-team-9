@@ -1,0 +1,35 @@
+body {
+  background-color: var(--purple-300);
+}
+.step-page__step-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  min-height: 100vh;
+  padding-top: 9.375rem;
+}
+
+.stage-page__step-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.stage-page__step-card-description {
+  height: 150px;
+  width: 150px;
+  background-color: var(--white);
+  border-radius: var(--radius-4);
+  text-align: center;
+  line-height: 150px;
+}
+
+.stpe-page__home-help-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: var(--space-4);
+}

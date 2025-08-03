@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="모두를 위한 피아노 우주, Pianiverse에 오신 것을 환영합니다!"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../../public/assets/favicon/pianiverse.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="stylesheet" href="./home.css" />
+    <script type="module" src="./home.js"></script>
+    <title>Pianiverse</title>
+  </head>
+  <body>
+    <header>
+      <h1 lang="en">Pianiverse</h1>
+      <h2>모두를 위한 피아노 우주</h2>
+      <nav>
+        <button class="btn-help btn-round" type="button">
+          <img
+            src="../../public/assets/images/help_btn.svg"
+            alt="도움말"
+            width="40"
+            height="43"
+          />
+        </button>
+      </nav>
+    </header>
+    <div class="menus">
+      <ul class="menus__container">
+        <li class="menus__content">
+          <a
+            class="btn-square js-home-page-typeSelct"
+            href="../stage/stage.html"
+            data-type="learn"
+            >학습하기</a
+          >
+        </li>
+        <li class="menus__content">
+          <a
+            class="btn-square js-home-page-typeSelct"
+            href="../stage/stage.html"
+            data-type="game"
+            >게임하기</a
+          >
+        </li>
+        <li class="menus__content">
+          <a class="btn-square" href="../play/play.html">연주하기</a>
+        </li>
+        <li class="menus__content">
+          <button
+            class="main-page__btn-mode-select btn-square js-main-page-btnModeSelect"
+            type="button"
+          >
+            모드선택
+          </button>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
