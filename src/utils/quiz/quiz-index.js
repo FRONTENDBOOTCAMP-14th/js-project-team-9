@@ -1,3 +1,8 @@
+import { startLearnQuiz } from "./learn-quiz";
+import { startGameQuizTogether } from "./game-together";
+import { startGameSee } from "./game-see";
+import { startGameListen } from "./game-listen";
+
 export function runQuiz(auto, mode, type) {
   if (!type) {
     throw new Error("runQuiz: 'type'은 반드시 지정해야 합니다. (learn | game)");

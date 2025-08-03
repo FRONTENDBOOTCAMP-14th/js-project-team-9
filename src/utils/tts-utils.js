@@ -2,40 +2,49 @@
  * tts-utils.js
  *
  * Web Speech API 기반 TTS 유틸 모듈
- * 설명창, 퀴즈 안내 등에서 음성 출력을 위해 사용됩니다.
- *
- * 사용 예:
- * import { speak, stopSpeaking, isSpeaking } from "./tts-utils.js";
- * speak("안녕하세요");
- * stopSpeaking();
  */
 
 let currentUtterance = null;
 
 /**
  * speak(text)
- * 전달된 텍스트를 음성으로 출력합니다.
- * 기존 발화가 있다면 먼저 중단하고 새로 시작합니다.
+ * 텍스트를 음성으로 읽고 끝날 때까지 기다립니다.
+ * 기존 발화가 있으면 중단하고 새로 시작합니다.
  *
- * @param {string} text - 음성으로 읽을 텍스트
+ * @param {string} text
+ * @returns {Promise<void>}
  */
 export function speak(text) {
   stopSpeaking();
 
-  if (!text || typeof text !== "string") return;
+  if (!text || typeof text !== "string") return Promise.resolve();
 
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "ko-KR"; // 한국어로 설정
-  utterance.rate = 1; // 재생 속도
-  utterance.pitch = 1; // 음 높이
+  return new Promise((resolve) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "ko-KR";
+    utterance.rate = 1;
+    utterance.pitch = 1;
+    utterance.onend = () => resolve();
 
-  currentUtterance = utterance;
-  speechSynthesis.speak(utterance);
+    currentUtterance = utterance;
+    speechSynthesis.speak(utterance);
+  });
+}
+
+/**
+ * speakAndWait(text)
+ * speak와 동일하지만 함수 이름만 명시적. speak(text)와 기능 동일.
+ *
+ * @param {string} text
+ * @returns {Promise<void>}
+ */
+export function speakAndWait(text) {
+  return speak(text); // 내부적으로 speak 사용
 }
 
 /**
  * stopSpeaking()
- * 현재 진행 중인 음성 출력을 중단합니다.
+ * 현재 음성 출력 중단
  */
 export function stopSpeaking() {
   if (speechSynthesis.speaking || speechSynthesis.pending) {
@@ -46,7 +55,7 @@ export function stopSpeaking() {
 
 /**
  * isSpeaking()
- * 현재 TTS가 재생 중인지 확인합니다.
+ * 현재 말하고 있는지 여부
  *
  * @returns {boolean}
  */

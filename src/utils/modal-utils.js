@@ -10,7 +10,7 @@ export function showClearModal() {
     console.warn("클리어 모달이 존재하지 않습니다.");
     return;
   }
-  modal.style.display = "block";
+  modal.showModal();
 }
 
 /**
@@ -22,5 +22,5 @@ export function showFailModal() {
     console.warn("실패 모달이 존재하지 않습니다.");
     return;
   }
-  modal.style.display = "block";
+  modal.showModal();
 }

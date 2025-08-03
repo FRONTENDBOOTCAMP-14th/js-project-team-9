@@ -22,6 +22,9 @@ export async function renderNavList() {
       if (menuElement) {
         const listItem = document.createElement("li");
         listItem.classList.add("nav-list__element");
+        if (className === ".btn-home") {
+          menuElement.href = "../home/home.html";
+        }
         listItem.appendChild(menuElement);
         fragment.appendChild(listItem);
       }

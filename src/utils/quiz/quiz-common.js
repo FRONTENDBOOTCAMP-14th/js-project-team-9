@@ -18,6 +18,10 @@ export function resetQuizState() {
   }
 }
 
+export function setCurrentHandler(fn) {
+  currentHandler = fn;
+}
+
 /**
  * 지정된 풀에서 랜덤 음 n개를 생성
  * @param {number} count - 몇 개 생성할지
@@ -109,7 +113,7 @@ export function generateHint(input, answer, compareBy = "scaleName") {
   const diff = answerIndex - inputIndex;
 
   const direction = diff === 0 ? "정답입니다!" : diff > 0 ? "오른쪽" : "왼쪽";
-  const koreanNote = convertScaleToKorean(inputNote);
+  const koreanNote = convertScaleToKorean(input);
 
   return diff === 0
     ? "정답입니다!"
@@ -134,7 +138,6 @@ export function initGameLife(max = 3) {
  */
 export function handleGameMistake(onFail) {
   life--;
-  speak?.(`틀렸습니다. 남은 기회는 ${life}번입니다.`);
 
   if (life <= 0) {
     onFail?.(); // 퀴즈 리스너 제거 등

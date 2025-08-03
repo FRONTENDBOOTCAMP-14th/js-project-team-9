@@ -20,15 +20,17 @@
     "speak": "왼쪽 흰 건반이 도예요",
     "auto": {
       "action": "showNote",
-      "note": "C4"
+      "note": "C4",
+      "delayAfterText": true
     }
   },
   {
     "text": "이제 도 소리를 들어봐요",
     "speak": "이제 도 소리를 들어봐요",
     "auto": {
-      "action": "playNote",
-      "note": "C4"
+      "action": "soundNote",
+      "note": "C4",
+      "delayAfterText": true
     }
   },
   {
@@ -43,7 +45,7 @@
       "note": "C4",
       "count": 1,
       "compareBy": "scaleName",
-      "delayAfterText": 500
+      "delayAfterText": true
     }
   }
 ]

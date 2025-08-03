@@ -1,5 +1,13 @@
 [
   {
+    "text": "방향 단축키 설명",
+    "speak": "단축키 안내입니다. 방향키 좌우를 누르면 다음 설명으로 이동할 수 있습니다. 오른쪽 방향키를 눌러보세요."
+  },
+  {
+    "text": "키보드 단축키 설명",
+    "speak": "잘하셨습니다. 건반도 키보드로 연주할 수 있어요. 기본 줄 왼쪽 첫 문자키부터 순서대로 도레미파솔라시 입니다."
+  },
+  {
     "text": "도를 배워요.",
     "speak": "도를 배워요."
   },
@@ -11,8 +19,9 @@
     "text": "이제 도 소리를 들려드릴게요. 귀 기울여 들어보세요.",
     "speak": "이제 도 소리를 들려드릴게요. 귀 기울여 들어보세요.",
     "auto": {
-      "action": "playNote",
-      "note": "C4"
+      "action": "soundNote",
+      "note": "C4",
+      "delayAfterText": true
     }
   },
   {
@@ -27,8 +36,9 @@
     "text": "이제 도 소리를 다시 들려드릴게요. 기억해보세요.",
     "speak": "이제 도 소리를 다시 들려드릴게요. 기억해보세요.",
     "auto": {
-      "action": "playNote",
-      "note": "C4"
+      "action": "soundNote",
+      "note": "C4",
+      "delayAfterText": true
     }
   },
   {
@@ -39,7 +49,7 @@
       "note": "C4",
       "count": 1,
       "compareBy": "scaleName",
-      "delayAfterText": 800
+      "delayAfterText": true
     }
   }
 ]

@@ -7,15 +7,11 @@ import {
   initGameLife,
   handleGameMistake,
   convertScaleToKorean,
+  setCurrentHandler,
 } from "./quiz-common.js";
-import { speak } from "../tts-utils.js";
+import { speak, speakAndWait } from "../tts-utils.js";
 import { showClearModal } from "../modal-utils.js";
-
-// TODO: 키 → 노트 매핑
-function mapKeyToNote(code) {
-  console.warn("mapKeyToNote는 아직 구현되지 않았습니다.");
-  return "C4"; // 임시 테스트
-}
+import { mapKeyToNote } from "../input-utils.js";
 
 // 기준음을 기준으로 랜덤 정답 생성
 function generateRelativeNote(baseNote) {
@@ -33,9 +29,11 @@ function generateRelativeNote(baseNote) {
     "A#",
     "B",
   ];
-  const [scale, octaveStr] = baseNote.match(/^([A-G]#?)(\d)$/).slice(1);
-  const octave = parseInt(octaveStr);
+  const match = baseNote.match(/^([A-G]#?)(\d)$/);
+  if (!match) return baseNote;
 
+  const [_, scale, octaveStr] = match;
+  const octave = parseInt(octaveStr);
   const baseIndex = chromaticScale.indexOf(scale) + octave * 12;
   const randomDiff = [-2, -1, 1, 2][Math.floor(Math.random() * 4)];
 
@@ -51,7 +49,7 @@ function generateRelativeNote(baseNote) {
  * @param {object} auto - { allowedNotes, guideBefore, guideAfter }
  * @param {string} mode - "listen"
  */
-export function startGameListen(auto, mode) {
+export async function startGameListen(auto, mode) {
   const {
     allowedNotes = ["C", "D", "E", "F", "G", "A", "B"],
     guideBefore = "기준음이 될 건반을 하나 눌러주세요.",
@@ -62,35 +60,43 @@ export function startGameListen(auto, mode) {
   resetQuizState();
   initGameLife();
 
-  speak(guideBefore);
+  await speakAndWait(guideBefore); // 안내 후 기준음 대기
 
   document.addEventListener("keydown", handleFirstInput);
-  currentHandler = handleFirstInput;
+  setCurrentHandler(handleFirstInput);
 
   function handleFirstInput(e) {
     const inputNote = mapKeyToNote?.(e.code);
     if (!inputNote) return;
 
-    const [scale, oct] = inputNote.match(/^([A-G]#?)(\d)$/)?.slice(1) ?? [];
+    const match = inputNote.match(/^([A-G]#?)(\d)$/);
+    if (!match) return;
+
+    const [_, scale] = match;
+
     if (!allowedNotes.includes(scale)) {
       speak(`"${scale}"은 사용할 수 없습니다. 다시 눌러주세요.`);
       return;
     }
 
     document.removeEventListener("keydown", handleFirstInput);
+    setCurrentHandler(null);
+
+    soundNote(inputNote);
 
     const answer = generateRelativeNote(inputNote);
-
+    const koreanAnswer = convertScaleToKorean(answer);
     const koreanInput = convertScaleToKorean(inputNote);
-    speak(`${guideAfter} 기준음은 ${koreanInput}입니다.`);
 
-    setTimeout(() => {
-      soundNote(answer);
-
-      // 음을 재생하고 정답 입력 대기
-      document.addEventListener("keydown", (e) => handleAnswerInput(e, answer));
-      currentHandler = (e) => handleAnswerInput(e, answer);
-    }, 600);
+    // 안내 멘트 → 기준음 발표 → 정답 계이름 발표
+    speakAndWait(`${guideAfter} 기준음은 ${koreanInput}입니다.`)
+      .then(() => speakAndWait(`이제 ${koreanAnswer}을 연주해보세요.`))
+      .then(() => {
+        document.addEventListener("keydown", (e) =>
+          handleAnswerInput(e, answer)
+        );
+        setCurrentHandler((e) => handleAnswerInput(e, answer));
+      });
   }
 
   function handleAnswerInput(e, answer) {
@@ -98,7 +104,7 @@ export function startGameListen(auto, mode) {
     if (!inputNote) return;
 
     document.removeEventListener("keydown", currentHandler);
-    currentHandler = null;
+    setCurrentHandler(null);
 
     const isCorrect = compareNotes(inputNote, answer, compareBy);
     if (isCorrect) {

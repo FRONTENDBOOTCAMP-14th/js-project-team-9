@@ -1,3 +1,7 @@
+@import url(../../src/styles/main.css);
+@import url(../../src/components/common/click-event-modals/click-event-modals.css);
+@import url(../../src/components/common/buttons/buttons.css);
+
 body {
   background: linear-gradient(
     180deg,
@@ -60,12 +64,6 @@ header {
   gap: var(--space-2);
 
   .menus__content {
-    .btn-square {
-      display: block;
-      align-content: center;
-      text-align: center;
-    }
-
     &:nth-of-type(2) > .btn-square {
       background: url("../../public/assets/images/sky_btn.svg") no-repeat;
     }
