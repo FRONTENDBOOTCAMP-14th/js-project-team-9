@@ -32,7 +32,8 @@
     "auto": {
       "action": "quizNote",
       "guideBefore": "기준음을 선택해 주세요. 아무 건반이나 눌러보세요.",
-      "guideAfter": "기준음을 확인했습니다."
+      "guideAfter": "기준음을 확인했습니다.",
+      "delayAfterText": true
     }
   }
 ]

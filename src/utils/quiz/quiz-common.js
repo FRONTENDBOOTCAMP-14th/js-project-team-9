@@ -18,6 +18,10 @@ export function resetQuizState() {
   }
 }
 
+export function setCurrentHandler(fn) {
+  currentHandler = fn;
+}
+
 /**
  * 지정된 풀에서 랜덤 음 n개를 생성
  * @param {number} count - 몇 개 생성할지

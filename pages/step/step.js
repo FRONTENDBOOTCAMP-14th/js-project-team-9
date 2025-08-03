@@ -7,8 +7,11 @@ import { initExplainBox } from "../../src/components/common/explain-box/explain-
 import { loadExplanations } from "../../src/utils/load-explanations.js";
 import { speak } from "../../src/utils/tts-utils.js";
 import { renderNavList } from "../../src/components/common/nav-buttons/nav-list-renderer.js";
+import { getStoredStageInfo } from "../../src/utils/stage-utils.js";
 
 (async () => {
+  const { type, mode, step } = getStoredStageInfo(); // ✅ 이렇게 받아야 함
+
   // nav 버튼 UI 삽입
   const navRes = await fetch("/components/nav-buttons.html");
   const navHtml = await navRes.text();
@@ -24,11 +27,6 @@ import { renderNavList } from "../../src/components/common/nav-buttons/nav-list-
   const explainHtml = await explainRes.text();
   document.querySelector(".explain-box-wrapper").innerHTML = explainHtml;
 
-  // 현재 단계 정보 - 추후 import로 바꿔줘야함
-  const type = "game";
-  const mode = "see"; // see, together, listen 중 택
-  const step = "1";
-
   // 설명 데이터 로딩
   const explanations = await loadExplanations({ type, mode, step });
 
@@ -37,6 +35,7 @@ import { renderNavList } from "../../src/components/common/nav-buttons/nav-list-
     explanations,
     onSpeak: speak,
     mode,
+    type,
   });
   renderNavList();
 
