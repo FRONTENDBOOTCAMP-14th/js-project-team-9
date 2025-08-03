@@ -47,7 +47,7 @@ export async function startLearnQuiz(auto) {
   function handleKeyInput(e) {
     const inputNote = mapKeyToNote?.(e.code);
     if (!inputNote) return;
-
+    soundNote(inputNote);
     userInputs.push(inputNote);
 
     if (userInputs.length >= count) {

@@ -28,7 +28,7 @@
     "text": "이제 레 소리를 들어봐요",
     "speak": "이제 레 소리를 들어봐요",
     "auto": {
-      "action": "playNote",
+      "action": "soundNote",
       "note": "D4",
       "delayAfterText": true
     }

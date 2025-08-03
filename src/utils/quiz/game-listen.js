@@ -11,12 +11,7 @@ import {
 } from "./quiz-common.js";
 import { speak, speakAndWait } from "../tts-utils.js";
 import { showClearModal } from "../modal-utils.js";
-
-// TODO: 키 → 노트 매핑
-function mapKeyToNote(code) {
-  console.warn("mapKeyToNote는 아직 구현되지 않았습니다.");
-  return "C4"; // 임시 테스트
-}
+import { mapKeyToNote } from "../input-utils.js";
 
 // 기준음을 기준으로 랜덤 정답 생성
 function generateRelativeNote(baseNote) {
@@ -87,16 +82,21 @@ export async function startGameListen(auto, mode) {
     document.removeEventListener("keydown", handleFirstInput);
     setCurrentHandler(null);
 
+    soundNote(inputNote);
+
     const answer = generateRelativeNote(inputNote);
+    const koreanAnswer = convertScaleToKorean(answer);
     const koreanInput = convertScaleToKorean(inputNote);
 
-    // 안내 → 기준음 발표 → 정답음 재생
-    speakAndWait(`${guideAfter} 기준음은 ${koreanInput}입니다.`).then(() => {
-      soundNote(answer);
-
-      document.addEventListener("keydown", (e) => handleAnswerInput(e, answer));
-      setCurrentHandler((e) => handleAnswerInput(e, answer));
-    });
+    // 안내 멘트 → 기준음 발표 → 정답 계이름 발표
+    speakAndWait(`${guideAfter} 기준음은 ${koreanInput}입니다.`)
+      .then(() => speakAndWait(`이제 ${koreanAnswer}을 연주해보세요.`))
+      .then(() => {
+        document.addEventListener("keydown", (e) =>
+          handleAnswerInput(e, answer)
+        );
+        setCurrentHandler((e) => handleAnswerInput(e, answer));
+      });
   }
 
   function handleAnswerInput(e, answer) {
