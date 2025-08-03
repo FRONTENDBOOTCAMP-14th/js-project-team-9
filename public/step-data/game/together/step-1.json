@@ -1,7 +1,7 @@
 [
   {
     "text": "1단계",
-    "speak": "1단계"
+    "speak": "일단계"
   },
   {
     "text": "순서대로 나오는 2개의 음을 듣고 무슨 음인지 맞혀보세요",
@@ -15,11 +15,10 @@
     "text": "버튼을 눌러 기준음인 도를 들어보세요",
     "speak": "버튼을 눌러 기준음인 도를 들어보세요",
     "retry": true,
-    "index": "도 듣기",
-    "auto": {
-      "action": "playNote",
-      "note": "C4"
-    }
+    "label": "도 듣기",
+
+    "action": "soundNote",
+    "note": "C4"
   },
   {
     "text": "2개의 음이 순서대로 들려요. 잘 듣고 똑같이 연주하세요.",
@@ -28,7 +27,7 @@
       "action": "quizNote",
       "count": 2,
       "generated": true,
-      "delayAfterText": 600
+      "delayAfterText": true
     }
   }
 ]

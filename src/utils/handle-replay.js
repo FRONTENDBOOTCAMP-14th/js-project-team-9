@@ -2,18 +2,6 @@
 
 import { handleAutoAction } from "./action-handler.js";
 
-/**
- * handleReplay()
- *
- * 설명창의 retry 버튼에서 호출됩니다.
- * 설명 항목(item)의 action에 따라 적절한 동작을 실행합니다.
- *
- * mode와 type은 localStorage에서 가져옵니다.
- * - mode: "listen", "see", "together"
- * - type: "learn", "game"
- *
- * @param {object} item - 설명 항목 객체 (text, speak, action 등 포함)
- */
 export function handleReplay(item) {
   if (!item || typeof item !== "object") {
     console.warn("handleReplay: 유효하지 않은 item", item);
@@ -23,5 +11,16 @@ export function handleReplay(item) {
   const mode = localStorage.getItem("mode") || "together";
   const type = localStorage.getItem("type") || "learn";
 
-  handleAutoAction(item, mode, type);
+  // auto 우선, 없으면 action/note로 구성
+  const actionPayload = item.auto ?? {
+    action: item.action,
+    note: item.note,
+  };
+
+  if (!actionPayload?.action) {
+    console.warn("handleReplay: 실행할 action이 없습니다", item);
+    return;
+  }
+
+  handleAutoAction(actionPayload, mode, type);
 }

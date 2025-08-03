@@ -15,7 +15,7 @@ a {
 }
 
 .btn-square {
-  background: url("../../../../public/assets/images/green_btn.svg") no-repeat;
+  background: url("/assets/images/green_btn.svg") no-repeat;
   inline-size: 8rem;
   block-size: 2.625rem;
   color: var(--white);
@@ -30,16 +30,16 @@ a {
   line-height: 0.4;
 
   &.continue-restart-modal__btn-continue {
-    background: url("../../../../public/assets/images/green_btn.svg") no-repeat;
+    background: url("/assets/images/green_btn.svg") no-repeat;
   }
   &.continue-restart-modal__btn-restart {
-    background: url("../../../../public/assets/images/pink_btn.svg") no-repeat;
+    background: url("/assets/images/pink_btn.svg") no-repeat;
   }
   &.mode-select-modal__btn-mode-select {
-    background: url("../../../../public/assets/images/purple_btn.svg") no-repeat;
+    background: url("/assets/images/purple_btn.svg") no-repeat;
   }
   &.volume-controller-hotkeys-modal__btn-hotkeys {
-    background: url("../../../../public/assets/images/sky_btn.svg") no-repeat;
+    background: url("/assets/images/sky_btn.svg") no-repeat;
   }
 }
 
@@ -51,7 +51,7 @@ a {
 }
 
 .btn-ok {
-  background: url("../../../../public/assets/images/ok_btn.svg") no-repeat;
+  background: url("/assets/images/ok_btn.svg") no-repeat;
   inline-size: 5.625rem;
   block-size: 2.625rem;
   padding: 0 0 var(--space-1) 0;
