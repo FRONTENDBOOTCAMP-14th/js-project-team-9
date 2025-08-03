@@ -1,4 +1,6 @@
 @import url(../../src/components/common/nav-buttons/nav-buttons.css);
+@import url(../../src/components/common/explain-box/explain-box.css);
+@import url(../../src/components/common/life/life.css);
 
 :root {
   --life-inset-block-start: 2.125rem;

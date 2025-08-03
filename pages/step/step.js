@@ -10,7 +10,7 @@ import { renderNavList } from "../../src/components/common/nav-buttons/nav-list-
 import { getStoredStageInfo } from "../../src/utils/stage-utils.js";
 
 (async () => {
-  const { type, mode, step } = getStoredStageInfo(); // ✅ 이렇게 받아야 함
+  const { type, mode, step } = getStoredStageInfo();
 
   // nav 버튼 UI 삽입
   const navRes = await fetch("/components/nav-buttons.html");
@@ -41,5 +41,5 @@ import { getStoredStageInfo } from "../../src/utils/stage-utils.js";
 
   // 목숨 상태 초기화 및 UI 첫 렌더링
   initGameLife();
-  updateLifeBar(mode);
+  updateLifeBar(mode, type);
 })();

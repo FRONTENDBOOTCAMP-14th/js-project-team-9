@@ -4,9 +4,16 @@ import { speak } from "../../../utils/tts-utils.js";
 /**
  * 현재 life 값을 기반으로 UI 렌더링 + 접근성 + listen 모드 클릭 안내
  */
-export function updateLifeBar(mode) {
+export function updateLifeBar(mode, type) {
   const lifeBar = document.querySelector(".life-bar-js");
   if (!lifeBar) return;
+
+  if (type === "learn") {
+    lifeBar.style.display = "none";
+    return;
+  } else {
+    lifeBar.style.display = ""; // 다시 보이게 (게임 모드 등)
+  }
 
   lifeBar.innerHTML = "";
 

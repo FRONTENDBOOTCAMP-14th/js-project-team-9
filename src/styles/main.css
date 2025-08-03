@@ -8,11 +8,6 @@
 @import "./common/_animation.css" layer(theme);
 @import "./common/_theme.css" layer(theme);
 
-@import "../components/common/explain-box/explain-box.css" layer(theme);
-@import "../components/common/life/life.css" layer(theme);
-
-@import "../components/common/nav-buttons/nav-buttons.css" layer(theme);
-
 [hidden] {
   display: none;
 }
