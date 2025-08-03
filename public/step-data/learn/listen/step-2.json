@@ -11,7 +11,7 @@
     "text": "이제 레 소리를 들려드릴게요. 귀 기울여 들어보세요.",
     "speak": "이제 레 소리를 들려드릴게요. 귀 기울여 들어보세요.",
     "auto": {
-      "action": "playNote",
+      "action": "soundNote",
       "note": "D4",
       "delayAfterText": true
     }
@@ -28,7 +28,7 @@
     "text": "이제 레 소리를 다시 들려드릴게요. 기억해보세요.",
     "speak": "이제 레 소리를 다시 들려드릴게요. 기억해보세요.",
     "auto": {
-      "action": "playNote",
+      "action": "soundNote",
       "note": "D4",
       "delayAfterText": true
     }

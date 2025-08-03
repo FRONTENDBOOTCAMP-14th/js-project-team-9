@@ -28,7 +28,7 @@
     "text": "이제 도 소리를 들어봐요",
     "speak": "이제 도 소리를 들어봐요",
     "auto": {
-      "action": "playNote",
+      "action": "soundNote",
       "note": "C4",
       "delayAfterText": true
     }
