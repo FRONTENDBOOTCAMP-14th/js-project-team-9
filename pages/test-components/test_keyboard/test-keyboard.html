@@ -1,0 +1,1778 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <link rel="stylesheet" href="./test-keyboard.css" />
+    <title>연주하기 페이지</title>
+    <script type="module" src="./test-keyboard.js"></script>
+  </head>
+  <body>
+    <!-- 5옥타브는 569번째 줄에 있습니다. -->
+    <!-- 6옥타브는 1120번째 줄에 있습니다 -->
+    <!-- 전체 키보드를 감싸는 div -->
+    <div class="keyboard-wrapper">
+      <!-- 한 옥타브를 감싸는 div, 4옥타브 -->
+      <div class="keyboard-container octave-4">
+        <!-- 흰 건반 묶음 -->
+        <div class="white-key-container">
+          <ul class="white-keys">
+            <li>
+              <button
+                class="white-key"
+                data-note="C4"
+                aria-label="도"
+                tabindex="1"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+    		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">C4</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="D4"
+                aria-label="레"
+                tabindex="3"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+    		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">D4</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="E4"
+                aria-label="미"
+                tabindex="5"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">E4</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="F4"
+                aria-label="파"
+                tabindex="6"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">F4</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="G4"
+                aria-label="솔"
+                tabindex="8"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">G4</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="A4"
+                aria-label="라"
+                tabindex="10"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">A4</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="B4"
+                aria-label="시"
+                tabindex="12"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">B4</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 검은색 건반 -->
+        <div class="black-key-container">
+          <ul class="black-keys">
+            <!-- C♯ (D♭) -->
+            <li>
+              <button class="black-key" data-note="C#4" tabindex="2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+  		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">C#4</span>
+              </button>
+            </li>
+
+            <!-- D♯ (E♭) -->
+            <li>
+              <button class="black-key" data-note="D#4" tabindex="4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+  		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">D#4</span>
+              </button>
+            </li>
+
+            <!-- F♯ (G♭) -->
+            <li>
+              <button class="black-key" data-note="F#4" tabindex="7">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+  		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">F#4</span>
+              </button>
+            </li>
+
+            <!-- G♯ (A♭) -->
+            <li>
+              <button class="black-key" data-note="G#4" tabindex="9">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+  		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">G#4</span>
+              </button>
+            </li>
+
+            <!-- A♯ (B♭) -->
+            <li>
+              <button class="black-key" data-note="A#4" tabindex="11">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+  		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">A#4</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 5옥타브 -->
+      <div class="keyboard-container octave-5">
+        <!-- 흰 건반 묶음 -->
+        <div class="white-key-container">
+          <ul class="white-keys">
+            <li>
+              <button
+                class="white-key"
+                data-note="C5"
+                aria-label="도"
+                tabindex="13"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">C5</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="D5"
+                aria-label="레"
+                tabindex="15"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">D5</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="E5"
+                aria-label="미"
+                tabindex="17"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">E5</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="F5"
+                aria-label="파"
+                tabindex="18"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">F5</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="G5"
+                aria-label="솔"
+                tabindex="20"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">G5</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="A5"
+                aria-label="라"
+                tabindex="22"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">A5</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="B5"
+                aria-label="시"
+                tabindex="24"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">B5</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 검은색 건반 -->
+        <div class="black-key-container">
+          <ul class="black-keys">
+            <li>
+              <!-- C♯ (D♭) -->
+              <button class="black-key" data-note="C#5" tabindex="14">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+  		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">C#5</span>
+              </button>
+            </li>
+
+            <!-- D♯ (E♭) -->
+            <li>
+              <button class="black-key" data-note="D#5" tabindex="16">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+    		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">D#5</span>
+              </button>
+            </li>
+
+            <!-- F♯ (G♭) -->
+            <li>
+              <button class="black-key" data-note="F#5" tabindex="19">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+    		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">F#5</span>
+              </button>
+            </li>
+
+            <!-- G♯ (A♭) -->
+            <li>
+              <button class="black-key" data-note="G#5" tabindex="21">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+    		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">G#5</span>
+              </button>
+            </li>
+
+            <!-- A♯ (B♭) -->
+            <li>
+              <button class="black-key" data-note="A#5" tabindex="23">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+  		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">A#5</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- 한 옥타브를 감싸는 div -->
+      </div>
+
+      <!-- 6옥타브 -->
+      <div hidden class="keyboard-container octave-6">
+        <!-- 흰 건반 묶음 -->
+        <div class="white-key-container">
+          <ul class="white-keys">
+            <li>
+              <button
+                class="white-key"
+                data-note="C6"
+                aria-label="도"
+                tabindex="25"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">C6</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="D6"
+                aria-label="레"
+                tabindex="28"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">D6</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="E6"
+                aria-label="미"
+                tabindex="30"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">E6</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="F6"
+                aria-label="파"
+                tabindex="31"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">F6</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="G6"
+                aria-label="솔"
+                tabindex="33"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">G6</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="A6"
+                aria-label="라"
+                tabindex="35"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">A6</span>
+              </button>
+            </li>
+            <li>
+              <button
+                class="white-key"
+                data-note="B6"
+                aria-label="시"
+                tabindex="36"
+              >
+                <svg
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="70"
+                  height="328"
+                  viewBox="0 0 70 328"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #2a2620;
+                    }
+                    .st1 {
+                      fill: #ffffff;
+                    }
+                    .st2 {
+                      fill: #ebe1cc;
+                    }
+                    .st3 {
+                      fill: #006fda;
+                      fill-opacity: 0;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      fill="#2A2620"
+                      d="M70,0H0v311c0,9.4,7.5,17,16.8,17h36.3c9.3,0,16.8-7.6,16.8-17L70,0L70,0z"
+                    />
+                    <path
+                      fill="#FFFFFF"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M55.5,305.7H14.4c-6.4,0-8.5-0.6-11.4-3.4c0,0,1.9,10.3,11.9,10.3H55c10,0,11.9-10.3,11.9-10.3
+  		C63.9,305.2,61.9,305.7,55.5,305.7z"
+                    />
+                    <path
+                      fill="#EBE1CC"
+                      d="M66.1,2.1H3.9v12.8H66L66.1,2.1L66.1,2.1z"
+                    />
+                    <path
+                      class="key-pressed"
+                      fill="#006FDA"
+                      opacity="0"
+                      d="M68.4,0H1.6v302c0,7,5.5,12.6,12.4,12.6h41.9c6.9,0,12.4-5.6,12.4-12.6L68.4,0L68.4,0z"
+                    />
+                  </g>
+                </svg>
+                <span class="w-key-text">B6</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 검은색 건반 -->
+        <div class="black-key-container">
+          <ul class="black-keys">
+            <li>
+              <!-- C♯ (D♭) -->
+              <button class="black-key" data-note="C#6" tabindex="26">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+  		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">C#6</span>
+              </button>
+            </li>
+
+            <!-- D♯ (E♭) -->
+            <li>
+              <button class="black-key" data-note="D#6" tabindex="29">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+    		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">D#6</span>
+              </button>
+            </li>
+
+            <!-- F♯ (G♭) -->
+            <li>
+              <button class="black-key" data-note="F#6" tabindex="31">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+    		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">F#6</span>
+              </button>
+            </li>
+
+            <!-- G♯ (A♭) -->
+            <li>
+              <button class="black-key" data-note="G#6" tabindex="33">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+    		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">G#6</span>
+              </button>
+            </li>
+
+            <!-- A♯ (B♭) -->
+            <li>
+              <button class="black-key" data-note="A#6" tabindex="35">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="52"
+                  height="184"
+                  viewBox="0 0 52 184"
+                >
+                  <path
+                    fill="#2A2620"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M31.1,161.1H20.9c-5.9,0-10.8-5-10.8-11.1V3.6H42V150C41.9,156.1,37.1,161.1,31.1,161.1z"
+                  />
+                  <path
+                    fill="#413930"
+                    d="M32,163.1H20.1c-9.3,0-12.6,5.7-12.6,10.9c0,3,2.4,5.4,5.5,5.4h26c3,0,5.5-2.4,5.5-5.4
+    		C44.5,168.8,41.3,163.1,32,163.1z"
+                  />
+                  <path
+                    class="key-pressed"
+                    fill="#006FDA"
+                    opacity="0"
+                    d="M37.4,184H14.6C6.5,184,0,177.3,0,169V0h52v169C52,177.3,45.5,184,37.4,184z"
+                  />
+                </svg>
+                <span class="b-key-text">A#6</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- 한 옥타브를 감싸는 div -->
+      </div>
+      <!-- wrapper -->
+    </div>
+  </body>
+</html>
