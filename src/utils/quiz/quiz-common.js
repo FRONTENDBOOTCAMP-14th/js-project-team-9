@@ -113,7 +113,7 @@ export function generateHint(input, answer, compareBy = "scaleName") {
   const diff = answerIndex - inputIndex;
 
   const direction = diff === 0 ? "정답입니다!" : diff > 0 ? "오른쪽" : "왼쪽";
-  const koreanNote = convertScaleToKorean(inputNote);
+  const koreanNote = convertScaleToKorean(input);
 
   return diff === 0
     ? "정답입니다!"

@@ -11,13 +11,7 @@ import {
 } from "./quiz-common.js";
 import { speak, speakAndWait } from "../tts-utils.js";
 import { showClearModal } from "../modal-utils.js";
-// import { mapKeyToNote } from "../input-utils.js";
-
-// TODO: 실제 구현되면 제거 예정 - 더미 함수로 임시 대체
-function mapKeyToNote(code) {
-  console.warn(`mapKeyToNote("${code}") 호출됨 (더미 함수)`);
-  return "C4"; // 임시 테스트용
-}
+import { mapKeyToNote } from "../input-utils.js";
 
 /**
  * 학습 모드 퀴즈 시작
@@ -57,15 +51,20 @@ export async function startLearnQuiz(auto) {
     userInputs.push(inputNote);
 
     if (userInputs.length >= count) {
-      document.removeEventListener("keydown", handleKeyInput);
-      setCurrentHandler(null);
-
       const isCorrect = compareNotes(userInputs[0], answer, compareBy);
+
       if (isCorrect) {
+        document.removeEventListener("keydown", handleKeyInput);
+        setCurrentHandler(null);
+
         speak("정답입니다!");
         showClearModal();
       } else {
-        const hint = generateHint(userInputs[0], answer, compareBy);
+        const wrong = userInputs[0];
+        userInputs.length = 0; // 입력 초기화
+        const hint = generateHint(wrong, answer, compareBy);
+        const textBox = document.querySelector(".explain-box__content");
+        if (textBox) textBox.textContent = hint;
         speak(hint);
       }
     }
