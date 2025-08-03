@@ -1,0 +1,70 @@
+@import "../../src/components/common/nav-buttons/nav-buttons.css";
+@import "../../src/components/common/music-sheet-select/music-sheet-select.css";
+
+html,
+body {
+  block-size: 100vh;
+  /* overflow: hidden; */
+}
+
+body {
+  background: linear-gradient(
+    180deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-end) 100%
+  );
+}
+
+.nav-list {
+  padding: var(--space-4) calc(var(--space-3) * 2);
+}
+
+main {
+  block-size: calc(100vh - 91px);
+  display: grid;
+  grid-template-rows: 1fr max-content;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "octave music-sheet toggle-buttons"
+    "piano piano piano";
+  row-gap: var(--space-3);
+}
+
+.music-sheet__viewer {
+  grid-area: music-sheet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.toggle-buttons {
+  grid-area: toggle-buttons;
+  margin-inline: var(--space-4);
+  inline-size: 104px;
+  block-size: 144px;
+  justify-self: end;
+  align-self: end;
+}
+
+.octave {
+  margin-inline: var(--space-4);
+  grid-area: octave;
+  inline-size: 8rem;
+  block-size: 2.5rem;
+  justify-self: start;
+  align-self: end;
+}
+
+.piano {
+  grid-area: piano;
+  inline-size: 100vw;
+  aspect-ratio: 128/45;
+}
+
+@media screen and (min-width: 1024px) {
+  .piano {
+    aspect-ratio: 383/90;
+  }
+}
