@@ -39,7 +39,7 @@
   },
   {
     "text": "<레>를 연주해보세요!",
-    "speak": "도를 연주해보세요",
+    "speak": "레를 연주해보세요",
     "auto": {
       "action": "quizNote",
       "note": "D4",
