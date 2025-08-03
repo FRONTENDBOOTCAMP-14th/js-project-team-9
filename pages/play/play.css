@@ -1,3 +1,6 @@
+@import "../../src/components/common/nav-buttons/nav-buttons.css";
+@import "../../src/components/common/music-sheet-select/music-sheet-select.css";
+
 html,
 body {
   block-size: 100vh;

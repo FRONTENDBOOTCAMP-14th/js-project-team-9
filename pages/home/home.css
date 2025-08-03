@@ -1,3 +1,6 @@
+@import "../../src/components/common/buttons/buttons.css";
+@import "../../src/components/common/click-event-modals/click-event-modals.css";
+
 body {
   background: linear-gradient(
     180deg,
