@@ -1,5 +1,6 @@
-@import "../../src/components/common/buttons/buttons.css";
-@import "../../src/components/common/click-event-modals/click-event-modals.css";
+@import url(../../src/styles/main.css);
+@import url(../../src/components/common/click-event-modals/click-event-modals.css);
+@import url(../../src/components/common/buttons/buttons.css);
 
 body {
   background: linear-gradient(
