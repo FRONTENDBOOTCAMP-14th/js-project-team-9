@@ -9,5 +9,5 @@
 @import "./common/_theme.css" layer(theme);
 
 [hidden] {
-  display: none !important;
+  display: none;
 }
