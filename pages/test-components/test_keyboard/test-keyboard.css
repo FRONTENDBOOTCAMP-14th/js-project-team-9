@@ -1,4 +1,4 @@
-@import "../../../styles/main.css";
+@import "../../../src/styles/main.css";
 
 .keyboard-wrapper {
   background: #413930;
@@ -31,14 +31,14 @@
       box-shadow 0.2s ease;
   }
 
-  /* .white-key:focus,
+  .white-key:focus,
   .black-key:focus {
     background: transparent;
     outline: none;
     border-radius: 4px 4px 16px 16px;
-    box-shadow: 0 0 0 3px #006fda; 
+    box-shadow: 0 0 0 3px #006fda;
     opacity: 1;
-  } */
+  }
 
   .white-key:focus-visible,
   .black-key:focus-visible {

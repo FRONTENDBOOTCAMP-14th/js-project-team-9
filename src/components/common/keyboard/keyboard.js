@@ -1,5 +1,3 @@
-import { soundNote } from "../../../utils/sound-utils";
-
 const octave6 = document.querySelector(".octave-6");
 
 // 데스크탑 뷰에서의 반응형 구현
