@@ -50,7 +50,8 @@ header {
       background-image: url("../../public/assets/images/memoji-jieun.png");
     }
 
-    &:focus-within {
+    &:focus-within,
+    &:hover {
       &::after {
         content: "";
         display: block;
@@ -220,7 +221,8 @@ main {
       background-clip: border-box;
     }
 
-    &:focus-within {
+    &:focus-within,
+    &:hover {
       .game-card__focus {
         opacity: 1;
       }
@@ -313,7 +315,8 @@ main {
     font-size: var(--font-size-24);
   }
 
-  &:focus-within {
+  &:focus-within,
+  &:hover {
     &::after {
       content: "";
       display: block;
