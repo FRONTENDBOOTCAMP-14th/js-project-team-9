@@ -4,20 +4,21 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="모두를 위한 피아노 우주, Pianiverse에 오신 것을 환영합니다!"
+      content="Liontendo에서 다양한 게임을 즐겨보세요!"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./public/assets/favicon/pianiverse.ico"
+      href="./public/assets/favicon/liontendo.ico"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./src/styles/main.css" />
     <link rel="stylesheet" href="./src/styles/index.css" />
-    <title>Pianiverse</title>
+    <title>Liontendo</title>
   </head>
   <body>
     <header>
+      <h1 class="sr-only">Liontendo</h1>
       <ul class="player__list">
         <li class="player__content">
           <a href="https://github.com/namil66" class="player__link"
@@ -88,6 +89,42 @@
         </svg>
       </div>
     </header>
+
+    <dialog class="oer-dialog">
+      <h2 class="oer-dialog__title">멋쟁이사자처럼 학습 프로젝트</h2>
+      <div class="oer-dialog__details">
+        <p>
+          안녕하세요, 방문자님!
+          <strong
+            >본 웹사이트는 상업용이 아닌, 멋쟁이사자처럼 프론트엔드 교육 과정의
+            학습 프로젝트로 제작한 교육용 페이지입니다.</strong
+          >
+        </p>
+        <div class="oer-dialog__list">
+          <strong>[면책 조항]</strong>
+          <ul>
+            <li>교육 목적으로 제작한 비상업적 프로젝트입니다.</li>
+            <li>
+              사이트에 포함된 정보는 정확성이나 완전성을 보장하지 않습니다.
+            </li>
+            <li>
+              제3자 콘텐츠가 포함될 수 있으며, 해당 저작권은 원 소유자에게
+              있습니다.
+            </li>
+          </ul>
+        </div>
+        <p>
+          <strong
+            >확인 버튼을 클릭하면 이 내용에 동의한 것으로 간주합니다.</strong
+          >
+          즐거운 탐색 되세요!
+        </p>
+      </div>
+      <form method="dialog">
+        <button class="oer-dialog__close" type="submit">확인</button>
+      </form>
+    </dialog>
+
     <main>
       <ul class="game-card__container">
         <li class="game-card__content">
@@ -437,5 +474,9 @@
         </button>
       </div>
     </footer>
+    <script
+      type="module"
+      src="./src/components/common/oer-dialog-handler.js"
+    ></script>
   </body>
 </html>
