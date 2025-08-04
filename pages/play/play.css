@@ -2,6 +2,7 @@
 @import "../../src/components/common/music-sheet-select/music-sheet-select.css";
 @import "../../src/components/common/buttons/buttons.css";
 @import "../../src/components/common/click-event-modals/click-event-modals.css";
+@import "../../src/components/common/keyboard/keyboard.css";
 
 html,
 body {

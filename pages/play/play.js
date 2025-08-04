@@ -2,7 +2,7 @@ const navList = document.querySelector(".nav-list");
 const musicSheetViewer = document.querySelector(".music-sheet__viewer");
 // const toggleButtons = document.querySelector(".toggle-buttons");
 // const octave = document.querySelector(".octave");
-// const piano = document.querySelector(".piano");
+const piano = document.querySelector(".piano");
 
 renderHTML("/components/nav-buttons.html", navList)
   .then(() => {
@@ -29,6 +29,15 @@ renderHTML("/components/nav-buttons.html", navList)
   })
   .then((musicSheetEventHandlersModule) => {
     musicSheetEventHandlersModule.setupEventListeners();
+  })
+  .then(() => {
+    return renderHTML("/components/keyboard.html", piano);
+  })
+  .then(() => {
+    return import("../../src/components/common/keyboard/keyboard.js");
+  })
+  .then((keyboard) => {
+    keyboard;
     console.log("모든 HTML 파일이 성공적으로 렌더링되었습니다.");
   })
   .catch((error) => {
