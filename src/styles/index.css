@@ -111,6 +111,70 @@ header {
   }
 }
 
+.oer-dialog {
+  inset-block-start: 50%;
+  max-inline-size: 40rem;
+  transform: translateY(-50%);
+  margin: auto;
+  padding: var(--space-4);
+  border: 6px solid var(--white);
+  border-radius: var(--radius-16);
+  background: var(--bg-gray);
+  color: var(--black);
+  line-height: 1.5;
+  z-index: 999;
+
+  &::backdrop {
+    background-color: #000c;
+    backdrop-filter: blur(1px);
+  }
+
+  .oer-dialog__title {
+    font-size: var(--font-size-24);
+    text-align: center;
+  }
+
+  .oer-dialog__details {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: var(--space-3);
+    padding-block: var(--space-3);
+
+    strong {
+      display: block;
+    }
+
+    .oer-dialog__list {
+      ul {
+        padding-inline-start: var(--space-4);
+        list-style-type: disc;
+      }
+    }
+  }
+
+  .oer-dialog__close {
+    border-radius: var(--radius-4);
+    inline-size: 100%;
+    background: var(--gray-500);
+    margin: 0;
+    padding: var(--space-2);
+    font-size: var(--font-size-18);
+    font-weight: var(--weight-600);
+    color: var(--white);
+    transition: background-color 200ms ease;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--main-red);
+    }
+
+    &:focus-visible {
+      outline: var(--border-3) solid var(--select-font-color);
+      outline-offset: 2px;
+    }
+  }
+}
+
 main {
   margin-block-start: 4rem;
   display: grid;
