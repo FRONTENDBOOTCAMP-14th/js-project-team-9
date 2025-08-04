@@ -39,7 +39,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: scroll;
 
   min-width: var(--ex-text-min-width);
   min-height: var(--ex-text-min-height);
