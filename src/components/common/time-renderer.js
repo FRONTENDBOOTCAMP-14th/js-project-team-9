@@ -8,8 +8,8 @@ function updateClock() {
   const hour = String(now.getHours()).padStart(2, "0");
   const minute = String(now.getMinutes()).padStart(2, "0");
   let ampm = "AM";
+  if (Number(hour) >= 12) ampm = "PM";
   const timeString = `${hour}:${minute}<span>${ampm}</span>`;
 
-  if (hour > 12) ampm = "PM";
   time.innerHTML = timeString;
 }
