@@ -4,7 +4,7 @@ const musicSheetViewer = document.querySelector(".music-sheet__viewer");
 // const octave = document.querySelector(".octave");
 // const piano = document.querySelector(".piano");
 
-renderHTML("../../src/components/common/nav-buttons/nav-buttons.html", navList)
+renderHTML("/components/nav-buttons.html", navList)
   .then(() => {
     return import("../../src/components/common/nav-buttons/nav-buttons.js");
   })
