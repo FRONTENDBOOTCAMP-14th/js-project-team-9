@@ -43,7 +43,7 @@ header {
     }
 
     &:nth-child(3) {
-      background-image: url("../../public/assets/images/memoji-hyungmin.jpg");
+      background-image: url("../../public/assets/images/memoji-hyungmin.png");
     }
 
     &:nth-child(4) {
@@ -66,6 +66,7 @@ header {
     }
 
     .player__link {
+      outline: 0;
       display: block;
       inline-size: 100%;
       block-size: 100%;
@@ -76,7 +77,6 @@ header {
     }
 
     .player__name {
-      outline: 0;
       inline-size: 100%;
       color: var(--select-font-color);
       font-size: var(--font-size-18);
