@@ -1,57 +1,73 @@
-# 바닐라 프로젝트 9조
--
--
+# 🎹 Piano Learning Web App
 
-## 🛠️ 기술 스택
+**모두를 위한 피아노 우주, Pianiverse**  
+9조 팀 프로젝트 | 바닐라 HTML/CSS/JS | 25.07.18 ~ 25.08.04 진행
 
-HTML5, CSS3, JavaScript
+[🌐 배포 사이트 바로가기](https://pianiverse.netlify.app/)
 
-## 조원 소개
+---
 
-| 이름     | 역할 |
-| -------- | ---- |
-| 김에스더 |  PM  |
-| 신남일  | 조장 |
-| 이형민  | 발표 |
-| 정지은  | 디자인 |
+## 프로젝트 소개
 
-## 파일 구조
+Pianiverse는 키보드와 음성 안내를 기반으로 시각장애인, 피아노 입문자 누구나 함께 즐길 수 있는
+**접근성 중심의 인터랙티브 피아노 학습 웹 애플리케이션**입니다.
 
-```md
-🧱프로젝트 루트/
-├── 📁 .github
-├── 📁 .vscode
-├── 📁public/ # 정적 자산 폴더
-│    └── 📁assets/ # 이미지, 폰트 등 공개용 파일
-│         ├── 📁favicon/ # 파비콘 
-│         ├── 📁fonts/ # 웹폰트 (woff, woff2 등)
-│         └── 📁images/ # 이미지 파일 (svg, jpg 등)
-├── 📁src/ # 소스 코드 루트
-│    ├── 📁components/ # 재사용 가능한 UI 컴포넌트
-│    │    ├──📁common/ # 공통 컴포넌트
-│    │    └──📁pages/ # 개별 페이지 컴포넌트
-│    ├── 📁styles/ # 공통 스타일 집합
-│    │     └── 📁common/ # reset, base, theme 등 전역 스타일
-│    └── 📁utils/
-├── .gitattributes
-├── .gitignore
-├── .prettierrc.cjs
-├── eslint.config.js
-├── index.html
-├── package.json
-├── pnpm-lock.yaml
-├── pnpm-workspace.yaml
-└── README.md
+**닌텐도 스위치 UI**에서 착안한 Index 페이지를 통해 메인 페이지로 이동할 수 있습니다.  
+또한, **보면서/들으면서/함께 배우기** 3가지 모드 중 하나를 선택하여 **학습하기/게임하기** 2가지 타입을 즐기실 수 있습니다.
+Web Audio API, Web Speech API 등을 적극 활용하여 접근성을 향상하고 실제 피아노처럼 연주 경험을 제공합니다.
+
+---
+
+## 팀원 소개
+
+| 이름     | 역할 | MBTI |
+| :------- | :--: | :--- |
+| 신남일   | 팀원 | INTP |
+| 김에스더 | 팀원 | INFJ |
+| 이형민   | 팀원 | INTP |
+| 정지은   | 팀원 | ISTP |
+
+---
+
+## 프로젝트 구조
+
+```
+📁 pages/
+├── index.html        ← 진입 페이지
+├── home.html         ← 모드/기능 선택
+├── stage.html        ← 학습/게임 공용 단계 선택
+├── step.html         ← 학습/게임 공용 단계 실행
+├── play.html         ← 자유 연주
+
+📁 step-data/
+├── game/
+│   ├── together/
+│   │   ├── step-1.json
+│   │   ...
+│   ├── see/
+│   │   ├── step-1.json
+│   │   ...
+│   └── listen/
+│       ├── step-1.json
+│       ...
+└── learn/
+    ├── together/
+    │	├── step-1.json
+    │   ...
+    ├── see/
+    │	├── step-1.json
+    │   ...
+    └── listen/
+	├── step-1.json
+	...
+	(폴더에 맞게 단계 파일 생성)
 ```
 
-## 코딩 컨벤션
+---
 
--
--
--
+## 레퍼런스
 
-## 기타 등등
+- UI 디자인: [Nintendo Switch 홈 화면](https://www.nintendo.com/)
+- 피아노 기능: [MUSICCA](https://www.musicca.com/piano)
 
--
--
--
+---
