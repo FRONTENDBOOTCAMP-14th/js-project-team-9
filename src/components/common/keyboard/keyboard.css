@@ -1,10 +1,8 @@
-@import "../../../styles/main.css";
-
 .keyboard-wrapper {
   background: #413930;
   display: flex;
   flex-flow: row nowrap;
-  min-inline-size: 48rem;
+  min-inline-size: 100%;
   block-size: 22.5rem;
   padding-inline: 1rem;
   padding-block-start: 0.8438rem;
@@ -19,7 +17,7 @@
   .octave-4,
   .octave-5,
   .octave-6 {
-    inline-size: 32rem;
+    min-inline-size: 0;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
   }
@@ -27,16 +25,17 @@
   .white-key,
   .black-key {
     transition:
-      background-color 0.2s ease,
-      box-shadow 0.2s ease;
+      background-color 0.1s ease,
+      box-shadow 0.1s ease;
   }
 
   .white-key:focus,
   .black-key:focus {
     background: transparent;
     outline: none;
-    border-radius: 4px 4px 16px 16px;
-    box-shadow: 0 0 0 3px #006fda;
+    border-radius: var(--radius-4) var(--radius-4) var(--radius-16)
+      var(--radius-16);
+    box-shadow: 0 0 0 1px #006fda;
     opacity: 1;
   }
 
@@ -44,7 +43,29 @@
   .black-key:focus-visible {
     outline: none;
     background: #006fda;
-    border: 1px solid #006fda;
+  }
+
+  /* 흰 건반 눌림 효과 개선 */
+  .white-key.pressed {
+    filter: brightness(0.75);
+    transform: translateY(2px);
+  }
+
+  /* 검은 건반 눌림 효과 개선 */
+  .black-key.pressed {
+    filter: brightness(1.1);
+    transform: translateY(1px);
+  }
+
+  /* SVG 내부 .key-pressed 요소와 함께 사용되는 추가 효과 */
+  .white-key.pressed svg .key-pressed,
+  .black-key.pressed svg .key-pressed {
+    opacity: 1 !important;
+    transition: opacity 0.1s ease;
+  }
+
+  .white-key-container {
+    border: 2px solid red;
   }
 
   /* 흰색 건반 정렬 */
@@ -136,6 +157,12 @@
       font-size: var(--font-size-18);
       color: var(--white);
       pointer-events: none;
+    }
+  }
+
+  @media (min-width: 75rem) {
+    .octave-6 {
+      display: grid;
     }
   }
 }
