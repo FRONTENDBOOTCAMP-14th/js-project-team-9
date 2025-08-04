@@ -14,7 +14,6 @@
     />
     <link rel="stylesheet" href="./src/styles/main.css" />
     <link rel="stylesheet" href="./src/styles/index.css" />
-    <script type="module" src=""></script>
     <title>Pianiverse</title>
   </head>
   <body>
@@ -111,7 +110,11 @@
       <div class="menu">
         <ul class="menu__container">
           <li class="menu__content">
-            <a href="https://bootcamp.likelion.net/" class="menu__button">
+            <a
+              href="https://bootcamp.likelion.net/"
+              class="menu__button"
+              aria-label="Liontendo"
+            >
               <svg
                 version="1.0"
                 xmlns="http://www.w3.org/2000/svg"
@@ -122,11 +125,7 @@
               >
                 <style>
                   g {
-                    fill: #000;
-
-                    @media (prefers-color-scheme: dark) {
-                      fill: #fff;
-                    }
+                    fill: #fff;
                   }
                 </style>
                 <rect width="100%" height="100%" fill="#e60012" />
@@ -146,12 +145,13 @@
                 </g>
               </svg>
             </a>
-            <span>Liontendo</span>
+            <span aria-hidden="true">Liontendo</span>
           </li>
           <li class="menu__content">
             <a
               href="https://github.com/FRONTENDBOOTCAMP-14th/js-project-team-9"
               class="menu__button"
+              aria-label="GitHub"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -166,12 +166,13 @@
                 />
               </svg>
             </a>
-            <span>GitHub</span>
+            <span aria-hidden="true">GitHub</span>
           </li>
           <li class="menu__content">
             <a
               href="https://github.com/FRONTENDBOOTCAMP-14th/js-project-team-9/wiki"
               class="menu__button"
+              aria-label="Wiki"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -186,10 +187,10 @@
                 />
               </svg>
             </a>
-            <span>Wiki</span>
+            <span aria-hidden="true">Wiki</span>
           </li>
           <li class="menu__content">
-            <a href="#" class="menu__button">
+            <a href="#" class="menu__button" aria-label="시행착오">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="80"
@@ -203,10 +204,10 @@
                 />
               </svg>
             </a>
-            <span>시행착오</span>
+            <span aria-hidden="true">시행착오</span>
           </li>
           <li class="menu__content">
-            <button type="button" class="menu__button">
+            <button type="button" class="menu__button" aria-label="설정">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="54"
@@ -274,7 +275,7 @@
             <span>설정</span>
           </li>
           <li class="menu__content">
-            <button type="button" class="menu__button">
+            <button type="button" class="menu__button" aria-label="전원">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="48"
